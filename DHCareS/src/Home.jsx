@@ -1,4 +1,11 @@
 import React from 'react';
+import department1 from './assets/img/department/1.png';
+import department2 from './assets/img/department/2.png';
+import department3 from './assets/img/department/3.png';
+import department4 from './assets/img/department/4.png';
+import department5 from './assets/img/department/5.png';
+import department6 from './assets/img/department/6.png';
+
 import expert1 from './assets/img/experts/1.png';
 import expert2 from './assets/img/experts/2.png';
 import expert3 from './assets/img/experts/3.png';
@@ -22,13 +29,13 @@ const Departments = () => {
           </div>
         </div>
         <div className="row">
-          {[
-            { imgSrc: 'img/department/1.png', title: 'Eye Care' },
-            { imgSrc: 'img/department/2.png', title: 'Physical Therapy' },
-            { imgSrc: 'img/department/3.png', title: 'Dental Care' },
-            { imgSrc: 'img/department/4.png', title: 'Diagnostic Test' },
-            { imgSrc: 'img/department/5.png', title: 'Skin Surgery' },
-            { imgSrc: 'img/department/6.png', title: 'Surgery Service' },
+          {[ 
+            { imgSrc: department1, title: 'Eye Care' },
+            { imgSrc: department2, title: 'Physical Therapy' },
+            { imgSrc: department3, title: 'Dental Care' },
+            { imgSrc: department4, title: 'Diagnostic Test' },
+            { imgSrc: department5, title: 'Skin Surgery' },
+            { imgSrc: department6, title: 'Surgery Service' }
           ].map((department, index) => (
             <div key={index} className="col-xl-4 col-md-6 col-lg-4">
               <div className="single_department">
@@ -48,6 +55,7 @@ const Departments = () => {
     </div>
   );
 };
+
 
 const Testimonials = () => {
   return (
@@ -138,46 +146,50 @@ const BusinessExpert = () => {
 };
 
 const ExpertDoctors = () => {
-  const doctors = [
-    { imgSrc: 'expert1', name: 'Mirazul Alom', specialization: 'Neurologist' },
-    { imgSrc: 'expert2', name: 'Mirazul Alom', specialization: 'Neurologist' },
-    { imgSrc: 'expert3', name: 'Mirazul Alom', specialization: 'Neurologist' },
-    { imgSrc: 'expert4', name: 'Mirazul Alom', specialization: 'Neurologist' },
-    { imgSrc: 'expert5', name: 'Mirazul Alom', specialization: 'Neurologist' },
-    { imgSrc: 'expert6', name: 'Mirazul Alom', specialization: 'Neurologist' }
-  ];
-
   return (
-    <div className="expert_doctors_area">
+    <div className="our_department_area">
       <div className="container">
         <div className="row">
           <div className="col-xl-12">
-            <div className="doctors_title mb-55">
+            <div className="section_title text-center mb-55">
               <h3>Expert Doctors</h3>
+              <p>
+                Esteem spirit temper too say adieus who direct esteem. <br />
+                It esteems luckily or picture placing drawing.
+              </p>
             </div>
           </div>
         </div>
         <div className="row">
-          <div className="col-xl-12">
-            <div className="expert_active owl-carousel">
-              {doctors.map((doctor, index) => (
-                <div key={index} className="single_expert">
-                  <div className="expert_thumb">
-                    <img src={doctor.imgSrc} alt={doctor.name} />
-                  </div>
-                  <div className="experts_name text-center">
-                    <h3>{doctor.name}</h3>
-                    <span>{doctor.specialization}</span>
-                  </div>
+          {[ 
+            { imgSrc: expert1, title: 'Name' },
+            { imgSrc: expert2, title: 'Name' },
+            { imgSrc: expert3, title: 'Name' },
+            { imgSrc: expert4, title: 'Name' },
+            { imgSrc: expert5, title: 'Name' },
+            { imgSrc: expert6, title: 'Name' }
+          ].map((department, index) => (
+            <div key={index} className="col-xl-4 col-md-6 col-lg-4">
+              <div className="single_department">
+                <div className="department_thumb">
+                  <img src={department.imgSrc} alt={department.title} />
                 </div>
-              ))}
+                <div className="department_content">
+                  <h3><a href="#">{department.title}</a></h3>
+                  <p>Esteem spirit temper too say adieus who direct esteem.</p>
+                  <a href="#" className="learn_more">Learn More</a>
+                </div>
+              </div>
             </div>
-          </div>
+          ))}
         </div>
       </div>
     </div>
   );
 };
+
+
+
 
 const EmergencyContact = () => {
   return (
@@ -225,3 +237,5 @@ const Home = () => {
 };
 
 export default Home;
+
+
