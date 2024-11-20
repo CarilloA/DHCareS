@@ -1,13 +1,16 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import Navbar from './common/Navbar.jsx';  // Corrected import path
 import Footer from './common/Footer';
 import Home from './Home';
-import DoctorSearch from './pages/About.jsx';
-import PrescriptionRequest from './pages/Blog';
-import HealthEvents from './pages/Contact';
-import EmailConsultation from './pages/Doctors';
-import AIHealthTips from './pages/Department';
+import Map from './pages/Map';
+import About from './pages/About';
+import Events from './pages/Events';
+import Contact from './pages/Contact';
+import Doctors from './pages/Doctors';
+import Appointment from './pages/Appointment';
+import Department from './pages/Department';
+import PageNotFound from './common/PageNotFound.jsx';
 // import './App.css';
 import './assets/css/bootstrap.min.css';
 import './assets/css/owl.carousel.min.css';
@@ -24,22 +27,25 @@ import './assets/css/slicknav.css';
 
 const App = () => {
   return (
-    <Router>
-      <div className="App">
-        <Navbar />
-        <div className="body">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/doctor-search" element={<DoctorSearch />} />
-            <Route path="/prescription-request" element={<PrescriptionRequest />} />
-            <Route path="/health-events" element={<HealthEvents />} />
-            <Route path="/email-consultation" element={<EmailConsultation />} />
-            <Route path="/ai-health-tips" element={<AIHealthTips />} />
-          </Routes>
-        </div>
+    <>
+    {/* Enable the future flag for v7_relativeSplatPath */}
+    <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
+      <Navbar />
+        <Routes>
+          <Route path='/' element={<Home />} /> {/*for default page*/}
+          <Route path='/Home' element={<Home />} />
+          <Route path='/pages/Department' element={<Department />} /> {/*element content is the import file*/}
+          <Route path='/pages/Doctors' element={<Doctors />} />
+          <Route path='/pages/Events' element={<Events />} />
+          <Route path='/pages/About' element={<About />} />
+          <Route path='/pages/Contact' element={<Contact />} />
+          <Route path='/pages/Map' element={<Map />} />
+          <Route path='/pages/Appointment' element={<Appointment />} />
+          <Route path='*' element={<PageNotFound />} /> {/* include asterisk for wildcard route */}
+        </Routes>
         <Footer />
-      </div>
-    </Router>
+    </BrowserRouter>
+  </>
   );
 };
 

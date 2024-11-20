@@ -1,8 +1,186 @@
+/* ######################## */
+/* Carousel CSS */
+/* Ensure the carousel items and captions are visually separated */
+.carousel-item {
+  position: relative;
+}
+
+/* .carousel-caption {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: white;
+  z-index: 10;
+  padding: 20px;
+} */
+
+/* Create a darker background behind the text for better contrast */
+.carousel-caption-content {
+  background: rgba(255, 255, 255, 0.5); /* Semi-transparent black background */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  text-align: left;
+}
+
+/* Title Styling */
+.carousel-title {
+  font-size: 5rem;
+  font-weight: bold;
+  line-height: 1;
+  letter-spacing: 1px;
+}
+
+.carousel-title span {
+  color: black;
+}
+
+/* Subtitle Styling */
+.carousel-subtitle {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-top: 5px;
+  display: block;
+  margin-bottom: 1em;
+}
+
+/* Description Styling */
+.carousel-description {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 10px 0;
+  opacity: 0.9;
+  color: black;
+  margin-left: 1em;
+}
+
+/* Button Styling */
+.boxed-btn3 {
+  padding: 10px 25px;
+  background-color: #ffcc00;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.boxed-btn3:hover {
+  background-color: #e6b800;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  .carousel-title {
+    font-size: 2rem;
+  }
+
+  .carousel-subtitle {
+    font-size: 1.2rem;
+  }
+
+  .carousel-description {
+    font-size: 0.9rem;
+  }
+}
+
+/* ########################## */
+/* customized styles for the pop up form of "Make an appointment" in Navbar.jsx */
+.modal-content {
+  z-index: 1050 !important;
+}
+.modal-backdrop {
+  z-index: 1040 !important;
+}
+/* Customizing the modal container */
+.custom-modal .modal-content {
+  background-color: #f9f9f9; /* Change modal background */
+  border-radius: 15px; /* Add rounded corners */
+  padding: 20px; /* Add extra padding */
+}
+/* Customizing modal title */
+.custom-modal-title {
+  font-size: 1.8rem;
+  color: #007bff; /* Change title color */
+  font-weight: bold;
+  text-align: center;
+}
+/* Customizing modal body */
+.custom-modal-body {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #333; /* Text color */
+}
+/* Add some style to the form inputs */
+.custom-modal-body input,
+.custom-modal-body textarea {
+  border-radius: 8px; /* Rounded inputs */
+  border: 1px solid #ccc;
+  padding: 10px;
+  width: 100%;
+}
+.custom-modal .btn-secondary {
+  color: #fff;
+  background-color: #6c757d; /* Secondary button color */
+}
 
 
 
 
 
+.footer {
+  background-color: #1a1a1a;
+  color: white;
+  padding: 40px 0;
+}
+
+.footer_top .footer_widget {
+  margin-bottom: 30px;
+}
+
+.footer_title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 15px;
+}
+
+.footer-description {
+  font-size: 14px;
+  color: #ccc;
+}
+
+.footer_links li {
+  margin-bottom: 10px;
+}
+
+.footer_links a {
+  color: #ccc;
+  text-decoration: none;
+}
+
+.footer_links a:hover {
+  color: #66cc66;
+}
+
+.map-container iframe {
+  border-radius: 8px;
+}
+
+.social_links {
+  margin-top: 20px;
+}
+
+.social-icon i {
+  font-size: 20px;
+  color: #fff;
+}
+
+.social-icon:hover i {
+  color: #66cc66;
+}
 
 
 
