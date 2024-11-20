@@ -8,18 +8,19 @@ import expert5 from '../assets/img/experts/5.png';
 import expert6 from '../assets/img/experts/6.png';
 import expert7 from '../assets/img/experts/7.png';
 import expert8 from '../assets/img/experts/8.png';
+import userIcon from '../assets/img/experts/userIcon.png';
 
 const Doctors = () => {
   // Sample data for doctors (name, specialty, schedule, image)
   const doctorData = [
-    { id: 1, name: 'Dr. John Doe', specialty: 'Eye Care', schedule: ['9:00 AM - 12:00 PM', '1:00 PM - 4:00 PM'],  imgSrc: expert1},
-    { id: 2, name: 'Dr. Sarah Lee', specialty: 'Dental', schedule: ['10:00 AM - 1:00 PM', '2:00 PM - 5:00 PM'],  imgSrc: expert2},
-    { id: 3, name: 'Dr. Michael Smith', specialty: 'Skin Care', schedule: ['8:00 AM - 11:00 AM', '1:00 PM - 3:00 PM'],  imgSrc: expert3},
-    { id: 4, name: 'Dr. Jane Williams', specialty: 'Pathology', schedule: ['9:30 AM - 12:30 PM', '3:00 PM - 6:00 PM'],  imgSrc: expert4},
-    { id: 5, name: 'Dr. Lucas Brown', specialty: 'Cardiology', schedule: ['9:00 AM - 12:00 PM', '2:00 PM - 5:00 PM'],  imgSrc: expert5},
-    { id: 6, name: 'Dr. Olivia Wilson', specialty: 'Orthopedics', schedule: ['10:00 AM - 1:00 PM', '3:00 PM - 6:00 PM'],  imgSrc: expert6},
-    { id: 7, name: 'Dr. Emma Lee', specialty: 'Pediatrics', schedule: ['9:00 AM - 12:00 PM', '1:00 PM - 4:00 PM'],  imgSrc: expert7},
-    { id: 8, name: 'Dr. Liam Miller', specialty: 'Psychiatry', schedule: ['8:00 AM - 11:00 AM', '2:00 PM - 5:00 PM'],  imgSrc: expert8},
+    { id: 1, name: 'Dr. John Doe', specialty: 'Eye Care', schedule: ['9:00 AM - 12:00 PM', '1:00 PM - 4:00 PM'],  imgSrc: userIcon},
+    { id: 2, name: 'Dr. Sarah Cruz', specialty: 'Dental', schedule: ['10:00 AM - 1:00 PM', '2:00 PM - 5:00 PM'],  imgSrc: userIcon},
+    { id: 3, name: 'Dr. Michael Ibasco', specialty: 'Skin Care', schedule: ['8:00 AM - 11:00 AM', '1:00 PM - 3:00 PM'],  imgSrc: userIcon},
+    { id: 4, name: 'Dr. Jane Garcia', specialty: 'Pathology', schedule: ['9:30 AM - 12:30 PM', '3:00 PM - 6:00 PM'],  imgSrc: userIcon},
+    { id: 5, name: 'Dr. Lucas Alanzalon', specialty: 'Cardiology', schedule: ['9:00 AM - 12:00 PM', '2:00 PM - 5:00 PM'],  imgSrc: userIcon},
+    { id: 6, name: 'Dr. Olivia Perez', specialty: 'Orthopedics', schedule: ['10:00 AM - 1:00 PM', '3:00 PM - 6:00 PM'],  imgSrc: userIcon},
+    { id: 7, name: 'Dr. Emma Lee', specialty: 'Pediatrics', schedule: ['9:00 AM - 12:00 PM', '1:00 PM - 4:00 PM'],  imgSrc: userIcon},
+    { id: 8, name: 'Dr. Liam Alba', specialty: 'Psychiatry', schedule: ['8:00 AM - 11:00 AM', '2:00 PM - 5:00 PM'],  imgSrc: userIcon},
   ];
 
   const [searchQuery, setSearchQuery] = useState('');
@@ -70,7 +71,7 @@ const Doctors = () => {
               <div key={doctor.id} className="col-md-6 col-lg-3">
                 <div className="single-expert mb-40">
                   <div className="expert-thumb">
-                    <img src={doctor.imgSrc} alt={doctor.name} />
+                    <img src={doctor.imgSrc} alt={doctor.name} width={200}/>
                   </div>
                   <div className="experts-name text-left">
                     <h3>{doctor.name}</h3>

@@ -87,6 +87,7 @@
 }
 
 /* ########################## */
+/* Modal CSS */
 /* customized styles for the pop up form of "Make an appointment" in Navbar.jsx */
 .modal-content {
   z-index: 1050 !important;
@@ -126,61 +127,6 @@
   background-color: #6c757d; /* Secondary button color */
 }
 
-
-
-
-
-.footer {
-  background-color: #1a1a1a;
-  color: white;
-  padding: 40px 0;
-}
-
-.footer_top .footer_widget {
-  margin-bottom: 30px;
-}
-
-.footer_title {
-  font-size: 20px;
-  font-weight: bold;
-  color: #fff;
-  margin-bottom: 15px;
-}
-
-.footer-description {
-  font-size: 14px;
-  color: #ccc;
-}
-
-.footer_links li {
-  margin-bottom: 10px;
-}
-
-.footer_links a {
-  color: #ccc;
-  text-decoration: none;
-}
-
-.footer_links a:hover {
-  color: #66cc66;
-}
-
-.map-container iframe {
-  border-radius: 8px;
-}
-
-.social_links {
-  margin-top: 20px;
-}
-
-.social-icon i {
-  font-size: 20px;
-  color: #fff;
-}
-
-.social-icon:hover i {
-  color: #66cc66;
-}
 
 
 

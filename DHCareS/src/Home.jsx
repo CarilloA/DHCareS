@@ -9,6 +9,9 @@ import department1 from './assets/img/department/1.png';
 import department2 from './assets/img/department/2.png';
 import department3 from './assets/img/department/3.png';
 import department4 from './assets/img/department/4.png';
+import medicalClinic from './assets/img/department/medicalClinic.png';
+import radiologyClinic from './assets/img/department/radiologyClinic.png';
+import painManagement from './assets/img/department/painManagement.png';
 
 import expert1 from './assets/img/experts/1.png';
 import expert2 from './assets/img/experts/2.png';
@@ -16,13 +19,14 @@ import expert3 from './assets/img/experts/3.png';
 import expert4 from './assets/img/experts/4.png';
 import expert5 from './assets/img/experts/5.png';
 import expert6 from './assets/img/experts/6.png';
+import userIcon from './assets/img/experts/userIcon.png';
 
 const Events = () => {
   // Event data
   const events = [
-    { imgSrc: department1, title: "Health care", subTitle: "For Hole Family", description: "In healthcare sector, service excellence is the facility of the hospital as healthcare service provider to consistently." },
-    { imgSrc: department2, title: "Health care", subTitle: "For Hole Family", description: "In healthcare sector, service excellence is the facility of the hospital as healthcare service provider to consistently." },
+    { imgSrc: medicalClinic, title: "Health care", subTitle: "For Hole Family", description: "In healthcare sector, service excellence is the facility of the hospital as healthcare service provider to consistently." },
     { imgSrc: department3, title: "Health care", subTitle: "For Hole Family", description: "In healthcare sector, service excellence is the facility of the hospital as healthcare service provider to consistently." },
+    { imgSrc: painManagement, title: "Health care", subTitle: "For Hole Family", description: "In healthcare sector, service excellence is the facility of the hospital as healthcare service provider to consistently." },
   ];
 
   return (
@@ -120,7 +124,7 @@ const ServiceArea = () => {
               </div>
               <h3>Emergency Care</h3>
               <p>Clinical excellence must be the priority for any health care service provider.</p>
-              <NavLink to='#' className="boxed-btn3-white">+10 672 356 3567</NavLink>
+              <NavLink to='#' className="boxed-btn3-white">mdc@e.ubaguio.edu</NavLink>
             </div>
           </div>
 
@@ -208,10 +212,10 @@ const Departments = () => {
         </div>
         <div className="row">
           {[ 
-            { imgSrc: department1, title: 'Medical Clinic', description: 'keeping UBians healthy and ready to keep learning'},
-            { imgSrc: department2, title: 'Dental Clinic', description:  'Helping maintain the oral health of UBians'},
-            { imgSrc: department3, title: 'Radiology CLinic - X-ray Services', description:  'X-rayservices used to help properly diagnosing a patient'},
-            { imgSrc: department4, title: 'PT Clinic - Pain Managemnt', description:  'The Physical Therapy Clinic assists its patients through physical rehabilitation and pain management'},
+            { imgSrc: medicalClinic, title: 'Medical Clinic', description: 'keeping UBians healthy and ready to keep learning'},
+            { imgSrc: department3, title: 'Dental Clinic', description:  'Helping maintain the oral health of UBians'},
+            { imgSrc: radiologyClinic, title: 'Radiology CLinic - X-ray Services', description:  'X-rayservices used to help properly diagnosing a patient'},
+            { imgSrc: painManagement, title: 'PT Clinic - Pain Managemnt', description:  'The Physical Therapy Clinic assists its patients through physical rehabilitation and pain management'},
           ].map((department, index) => (
             <div key={index} className="col-xl-4 col-md-6 col-lg-4">
               <div className="single_department">
@@ -368,17 +372,17 @@ const ExpertDoctors = () => {
         </div>
         <div className="row">
           {[ 
-            { imgSrc: expert1, title: 'Name' },
-            { imgSrc: expert2, title: 'Name' },
-            { imgSrc: expert3, title: 'Name' },
-            { imgSrc: expert4, title: 'Name' },
-            { imgSrc: expert5, title: 'Name' },
-            { imgSrc: expert6, title: 'Name' }
+            { imgSrc: userIcon, title: 'Name' },
+            { imgSrc: userIcon, title: 'Name' },
+            { imgSrc: userIcon, title: 'Name' },
+            { imgSrc: userIcon, title: 'Name' },
+            { imgSrc: userIcon, title: 'Name' },
+            { imgSrc: userIcon, title: 'Name' }
           ].map((department, index) => (
             <div key={index} className="col-xl-4 col-md-6 col-lg-4">
               <div className="single_department">
                 <div className="department_thumb">
-                  <img src={department.imgSrc} alt={department.title} />
+                  <img src={department.imgSrc} alt={department.title}/>
                 </div>
                 <div className="department_content">
                   <h3><NavLink to='#'>{department.title}</NavLink></h3>

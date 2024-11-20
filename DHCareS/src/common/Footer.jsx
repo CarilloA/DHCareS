@@ -15,7 +15,7 @@ const EmergencyContact = ({ show, handleShow, handleClose }) => {
                 <p>Esteem spirit temper too say adieus.</p>
               </div>
               <div className="info_button">
-                <NavLink to='/' className="boxed-btn3-white">+10 378 4673 467</NavLink>
+                <NavLink to='/' className="boxed-btn3-white">mdc@e.ubaguio.edu</NavLink>
               </div>
             </div>
           </div>
@@ -108,7 +108,7 @@ const Footer = () => {
                     </NavLink>
                   </div>
                   <p>
-                    Firmament morning sixth subdue darkness creeping gathered divide.
+                  Care Anytime, Anywhere.
                   </p>
                   <div className="social_links">
                     <ul className="d-flex list-unstyled">
@@ -162,8 +162,9 @@ const Footer = () => {
                   <h3 className="footer_title">Address</h3>
                   <p>
                   <i className="fa fa-map-marker">&nbsp;&nbsp;University of Baguio, General Luna Road, Baguio City</i> <br />
-                  <i className="fa fa-phone">&nbsp;&nbsp;(074) 442-3036) </i><br />
-                  <i className="fa fa-envelope">&nbsp;&nbsp;ub@e.ubaguio.edu</i>
+                  <i className="fa fa-location-arrow">&nbsp;&nbsp;Building F, 1st Floor </i><br />
+                  <i className="fa fa-phone">&nbsp;&nbsp;loc.267 </i><br />
+                  <i className="fa fa-envelope">&nbsp;&nbsp;mdc@e.ubaguio.edu</i>
                   </p>
                 </div>
               </div>
