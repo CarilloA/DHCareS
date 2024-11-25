@@ -4,10 +4,10 @@ import React from 'react';
 const Map = () => {
   return (
     <div style={{ textAlign: 'center', margin: '20px' }}>
-      <h2>UB Clinic Location</h2>
+      <h2>Konsulta Specialista Clinic Location</h2>
       <div style={{ border: '2px solid #003300', borderRadius: '8px', overflow: 'hidden', maxWidth: '800px', margin: '0 auto' }}>
       <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3827.1908049273115!2d120.59490157338317!3d16.41513313008854!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3391a15d8cb0dc9b%3A0xe282b2015f6debba!2sUniversity%20of%20Baguio!5e0!3m2!1sen!2sph!4v1732117989375!5m2!1sen!2sph"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3827.2519593877114!2d120.59602867514319!3d16.412025184318246!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3391a10008a3550f%3A0xa21178e9af841cd2!2sKonsulta%20Specialista%20Clinic!5e0!3m2!1sen!2sph!4v1732549775721!5m2!1sen!2sph"
             width="100%"
             height="450"
             style={{ border: '0' }}
@@ -22,7 +22,6 @@ const Map = () => {
     </div>
   );
 };
-
 
 // const EmergencyContact = () => {
 //   return (

@@ -1,4 +1,8 @@
 import React, { useState } from 'react';
+import { Modal, Button, Form } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import expert1 from '../assets/img/experts/1.png';
 import expert2 from '../assets/img/experts/2.png';
@@ -11,6 +15,65 @@ import expert8 from '../assets/img/experts/8.png';
 import userIcon from '../assets/img/experts/userIcon.png';
 
 const Doctors = () => {
+  // Appointment Form
+  const [show, setShow] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [emailError, setEmailError] = useState('');
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
+  const validateEmail = (email) => {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(String(email).toLowerCase());
+  };
+
+  const onSubmit = async (event) => {
+    event.preventDefault();
+    setLoading(true);
+    const formData = new FormData(event.target);
+
+    const email = formData.get('email');
+    if (!validateEmail(email)) {
+      setEmailError('Invalid email address');
+      setLoading(false);
+      return;
+    }
+
+    formData.append("access_key", "57fcabd0-5a00-449e-9fac-b67f80098d27");
+
+    const object = Object.fromEntries(formData);
+    const json = JSON.stringify(object);
+
+    console.log("Submitting form data:", json);
+
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json"
+        },
+        body: json
+      });
+
+      const result = await res.json();
+      console.log("Response from Web3Forms:", result);
+
+      if (result.success) {
+        toast.success("Appointment request sent successfully!");
+        handleClose();
+      } else {
+        toast.error("There was an error sending your appointment request. Please try again.");
+      }
+    } catch (error) {
+      console.error("Network error:", error);
+      toast.error("There was a network error sending your appointment request. Please check your connection and try again.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
   // Sample data for doctors (name, specialty, schedule, image)
   const doctorData = [
     { id: 1, name: 'Dr. John Doe', specialty: 'Eye Care', schedule: ['9:00 AM - 12:00 PM', '1:00 PM - 4:00 PM'],  imgSrc: userIcon},
@@ -75,22 +138,18 @@ const Doctors = () => {
                   </div>
                   <div className="experts-name text-left">
                     <h3>{doctor.name}</h3>
-                    <span>{doctor.specialty}</span>
-                    <p><br />
-                      <strong>Available Slots:</strong>
+                    <div style={{marginBottom: '0.5em'}}><span>{doctor.specialty}</span></div>
+                    <div style={{marginBottom: '1em'}}>
+                      <strong>Available Slots: </strong>
                       <ul style={{ listStyleType: 'none', paddingLeft: 0 }}>
-                        {doctor.schedule.map((time, index) => ( <li key={index}>{time}</li> ))}
+                        {doctor.schedule.map((time, index) => ( 
+                          <li key={index}>{time}</li> 
+                        ))}
                       </ul>
-                    </p>
+                      </div>
                     <button
-                      style={{
-                        padding: '10px 15px',
-                        backgroundColor: '#007bff',
-                        color: '#fff',
-                        border: 'none',
-                        borderRadius: '4px',
-                        cursor: 'pointer',
-                      }}
+                      onClick={handleShow}
+                      className='btn2'
                     >
                       Schedule an Appointment
                     </button>
@@ -103,6 +162,54 @@ const Doctors = () => {
           )}
         </div>
       </div>
+
+      <Modal show={show} onHide={handleClose} centered dialogClassName="custom-modal">
+        <Modal.Header closeButton>
+          <Modal.Title className="custom-modal-title">
+            Make an Appointment
+          </Modal.Title>
+        </Modal.Header>
+        <Modal.Body className="custom-modal-body">
+          <Form onSubmit={onSubmit}>
+            <Form.Group className="mb-3" controlId="formName">
+              <Form.Label>Name</Form.Label>
+              <Form.Control type="text" name="name" placeholder="Enter your name" required />
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="formEmail">
+              <Form.Label>Email</Form.Label>
+              <Form.Control type="email" name="email" placeholder="Enter your email" required isInvalid={!!emailError} />
+              <Form.Control.Feedback type="invalid">
+                {emailError}
+              </Form.Control.Feedback>
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="formContact">
+              <Form.Label>Contact</Form.Label>
+              <Form.Control type="tel" name="contact" placeholder="Enter your contact number" required />
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="formDate">
+              <Form.Label>Preferred Date</Form.Label>
+              <Form.Control type="date" name="date" required />
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="formTime">
+              <Form.Label>Preferred Time</Form.Label>
+              <Form.Control type="time" name="time" required />
+            </Form.Group>
+            <Form.Group controlId="formMessage">
+              <Form.Label>Reason</Form.Label>
+              <Form.Control as="textarea" name="message" rows={3} placeholder="You may add additional notes or requests" required />
+            </Form.Group>
+            <Modal.Footer>
+              <Button variant="secondary" onClick={handleClose}>
+                Close
+              </Button>
+              <Button type="submit" variant="primary" disabled={loading}>
+                {loading ? 'Submitting...' : 'Submit'}
+              </Button>
+            </Modal.Footer>
+          </Form>
+        </Modal.Body>
+      </Modal>
+      <ToastContainer />
     </div>
   );
 };

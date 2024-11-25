@@ -9,7 +9,7 @@ const EmergencyContact = ({ show, handleShow, handleClose }) => {
       <div className="container-fluid p-0">
         <div className="row no-gutters">
           <div className="col-xl-6">
-            <div className="single_emergency d-flex align-items-center justify-content-center emergency_bg_1 overlay_skyblue">
+            <div className="single_emergency d-flex align-items-center justify-content-center emergency_bg_1 overlay_brown">
               <div className="info">
                 <h3>For Any Emergency Contact</h3>
                 <p>Esteem spirit temper too say adieus.</p>
@@ -20,7 +20,7 @@ const EmergencyContact = ({ show, handleShow, handleClose }) => {
             </div>
           </div>
           <div className="col-xl-6">
-            <div className="single_emergency d-flex align-items-center justify-content-center emergency_bg_2 overlay_skyblue">
+            <div className="single_emergency d-flex align-items-center justify-content-center emergency_bg_2 overlay_brown">
               <div className="info">
                 <h3>Make an Online Appointment</h3>
                 <p>Esteem spirit temper too say adieus.</p>
@@ -104,7 +104,7 @@ const Footer = () => {
                 <div className="footer_widget">
                   <div className="footer_logo">
                     <NavLink to='/'>
-                      <h1 style={{color: 'white'}}>DHCareS</h1>
+                      <h3 style={{color: 'white'}}>Konsulta Specialista Clinic</h3>
                     </NavLink>
                   </div>
                   <p>
@@ -161,9 +161,9 @@ const Footer = () => {
                 <div className="footer_widget">
                   <h3 className="footer_title">Address</h3>
                   <p>
-                  <i className="fa fa-map-marker">&nbsp;&nbsp;University of Baguio, General Luna Road, Baguio City</i> <br />
-                  <i className="fa fa-location-arrow">&nbsp;&nbsp;Building F, 1st Floor </i><br />
-                  <i className="fa fa-phone">&nbsp;&nbsp;loc.267 </i><br />
+                  <i className="fa fa-map-marker">&nbsp;&nbsp;Porta Vaga Mall, Session Road , Baguio City, Philippines, 2600</i> <br />
+                  <i className="fa fa-location-arrow">&nbsp;&nbsp;4M-10 4th floor </i><br />
+                  <i className="fa fa-phone">&nbsp;&nbsp;0945 230 2676 </i><br />
                   <i className="fa fa-envelope">&nbsp;&nbsp;mdc@e.ubaguio.edu</i>
                   </p>
                 </div>

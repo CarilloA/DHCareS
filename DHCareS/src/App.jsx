@@ -3,6 +3,7 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import Navbar from './common/Navbar.jsx';  // Corrected import path
 import Footer from './common/Footer';
 import Home from './Home';
+import Services from './pages/Services';
 import Map from './pages/Map';
 import About from './pages/About';
 import Events from './pages/Events';
@@ -35,6 +36,7 @@ const App = () => {
           <Route path='/' element={<Home />} /> {/*for default page*/}
           <Route path='/Home' element={<Home />} />
           <Route path='/pages/Department' element={<Department />} /> {/*element content is the import file*/}
+          <Route path='/pages/Services' element={<Services />} />
           <Route path='/pages/Doctors' element={<Doctors />} />
           <Route path='/pages/Events' element={<Events />} />
           <Route path='/pages/About' element={<About />} />

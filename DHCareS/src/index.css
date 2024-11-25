@@ -1,3 +1,83 @@
+/* btn1 css */
+.btn1 {
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#0181f5+0,5db2ff+100 */
+  background: #b8a068;
+  /* Old browsers */
+  background: -moz-linear-gradient(left, #b8a068 0%, #dbc593 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(left, #b8a068 0%, #dbc593 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right, #b8a068 0%, #dbc593 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0181f5', endColorstr='#5db2ff',GradientType=1 );
+  /* IE6-9 */
+  color: #fff;
+  display: inline-block;
+  padding: 6px 44px;
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  border: 0;
+  border: 1px solid transparent;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  text-align: center;
+  color: #fff !important;
+  text-transform: capitalize;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+/* line 51, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_btn.scss */
+.btn1:hover {
+  background: #fff;
+  color: #b8a068 !important;
+  border: 1px solid #b8a068;
+}
+
+/* line 56, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_btn.scss */
+.btn1:focus {
+  outline: none;
+}
+
+/* line 59, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_btn.scss */
+.btn1.large-width {
+  width: 220px;
+}
+
+.btn2 {
+  padding: 10px 15px;
+  background: #b8a068;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.btn2:hover{
+  background: #fff;
+  color: #b8a068 !important;
+  border: 1px solid #b8a068;
+}
+
+.btn3 {
+  padding: 10px 15px;
+  background: #b8a068;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.btn3:hover{
+  background: #fff;
+  color: #b8a068 !important;
+  border: 1px solid #b8a068;
+}
+
+
 /* ######################## */
 /* Carousel CSS */
 /* Ensure the carousel items and captions are visually separated */
@@ -59,7 +139,7 @@
 /* Button Styling */
 .boxed-btn3 {
   padding: 10px 25px;
-  background-color: #ffcc00;
+  background-color: #b8a068;
   color: white;
   font-weight: bold;
   border-radius: 5px;
@@ -129,6 +209,82 @@
 
 
 
+
+/* services.jsx css */
+.services-container {
+  margin: 20px;
+  text-align: center; /* Aligning the container text to center */
+}
+
+.services-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center; /* Centering the service items */
+  align-items: center;
+}
+
+.service-item {
+  background-color: #f8f9fa;
+  border: 1px solid #ddd;
+  padding: 20px;
+  width: 250px;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center; /* Centering the content inside each service item */
+}
+
+
+.learn-more-link {
+  display: block;
+  margin-top: 10px;
+  text-decoration: none;
+  color: #d1921c;
+}
+
+.learn-more-link:hover {
+  text-decoration: underline;
+}
+
+.calendar-container {
+  margin-top: 20px;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 5px;
+  margin-top: 20px;
+}
+
+.calendar-day {
+  padding: 10px;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.calendar-day:hover {
+  background-color: #f0f0f0;
+}
+
+.calendar-day.available {
+  background-color: #b8a068;
+  color: white;
+}
+
+.schedule-times {
+  margin-top: 20px;
+}
+
+.schedule-times ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.schedule-times li {
+  margin-bottom: 10px;
+}
 
 
 
