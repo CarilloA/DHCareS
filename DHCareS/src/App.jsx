@@ -8,7 +8,7 @@ import Map from './pages/Map';
 import About from './pages/About';
 import Events from './pages/Events';
 import Contact from './pages/Contact';
-import Doctors from './pages/Doctors';
+import Faq from './pages/Faq';
 import Appointment from './pages/Appointment';
 import Department from './pages/Department';
 import PageNotFound from './common/PageNotFound.jsx';
@@ -37,7 +37,7 @@ const App = () => {
           <Route path='/Home' element={<Home />} />
           <Route path='/pages/Department' element={<Department />} /> {/*element content is the import file*/}
           <Route path='/pages/Services' element={<Services />} />
-          <Route path='/pages/Doctors' element={<Doctors />} />
+          <Route path='/pages/Faq' element={<Faq />} />
           <Route path='/pages/Events' element={<Events />} />
           <Route path='/pages/About' element={<About />} />
           <Route path='/pages/Contact' element={<Contact />} />

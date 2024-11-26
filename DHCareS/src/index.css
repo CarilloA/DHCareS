@@ -1,13 +1,13 @@
 /* btn1 css */
 .btn1 {
   /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#0181f5+0,5db2ff+100 */
-  background: #b8a068;
+  background: #b99c78;
   /* Old browsers */
-  background: -moz-linear-gradient(left, #b8a068 0%, #dbc593 100%);
+  background: -moz-linear-gradient(left, #b99c78 0%, #a78d6e 100%);
   /* FF3.6-15 */
-  background: -webkit-linear-gradient(left, #b8a068 0%, #dbc593 100%);
+  background: -webkit-linear-gradient(left, #b99c78 0%, #a78d6e 100%);
   /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to right, #b8a068 0%, #dbc593 100%);
+  background: linear-gradient(to right, #b99c78 0%, #a78d6e 100%);
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0181f5', endColorstr='#5db2ff',GradientType=1 );
   /* IE6-9 */
@@ -35,8 +35,8 @@
 /* line 51, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_btn.scss */
 .btn1:hover {
   background: #fff;
-  color: #b8a068 !important;
-  border: 1px solid #b8a068;
+  color: #b99c78 !important;
+  border: 1px solid #b99c78;
 }
 
 /* line 56, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_btn.scss */
@@ -51,7 +51,7 @@
 
 .btn2 {
   padding: 10px 15px;
-  background: #b8a068;
+  background: #b99c78;
   color: #fff;
   border: none;
   border-radius: 4px;
@@ -59,13 +59,14 @@
 }
 .btn2:hover{
   background: #fff;
-  color: #b8a068 !important;
-  border: 1px solid #b8a068;
+  color: #b99c78 !important;
+  border: 1px solid #b99c78;
 }
 
 .btn3 {
-  padding: 10px 15px;
-  background: #b8a068;
+  margin-left: 1em;
+  padding: 2px 10px;
+  background: #b99c78;
   color: #fff;
   border: none;
   border-radius: 4px;
@@ -73,8 +74,8 @@
 }
 .btn3:hover{
   background: #fff;
-  color: #b8a068 !important;
-  border: 1px solid #b8a068;
+  color: #b99c78 !important;
+  border: 1px solid #b99c78;
 }
 
 
@@ -136,10 +137,10 @@
   margin-left: 1em;
 }
 
-/* Button Styling */
+/* Button Styling
 .boxed-btn3 {
   padding: 10px 25px;
-  background-color: #b8a068;
+  background-color: #b99c78;
   color: white;
   font-weight: bold;
   border-radius: 5px;
@@ -149,7 +150,7 @@
 
 .boxed-btn3:hover {
   background-color: #e6b800;
-}
+} */
 
 /* Responsiveness */
 @media (max-width: 768px) {
@@ -166,9 +167,16 @@
   }
 }
 
+/* Navbar CSS */
+.header-top_area-style {
+  padding-top: 1em;
+  margin-bottom: -1.8em;
+}
+
 /* ########################## */
 /* Modal CSS */
-/* customized styles for the pop up form of "Make an appointment" in Navbar.jsx */
+/* Responsive modal styles for "Make an appointment" */
+/* General modal styles */
 .modal-content {
   z-index: 1050 !important;
 }
@@ -177,14 +185,17 @@
 }
 /* Customizing the modal container */
 .custom-modal .modal-content {
-  background-color: #f9f9f9; /* Change modal background */
-  border-radius: 15px; /* Add rounded corners */
-  padding: 20px; /* Add extra padding */
+  background-color: #f9f9f9;
+  border-radius: 1rem; /* Rounded corners */
+  padding: 2rem;
+  max-width: 60rem; /* Wider for computer screens */
+  width: 100%; /* Responsive width */
+  margin: auto;
 }
 /* Customizing modal title */
 .custom-modal-title {
   font-size: 1.8rem;
-  color: #007bff; /* Change title color */
+  color: #007bff;
   font-weight: bold;
   text-align: center;
 }
@@ -192,19 +203,45 @@
 .custom-modal-body {
   font-size: 1rem;
   line-height: 1.5;
-  color: #333; /* Text color */
+  color: #333;
 }
-/* Add some style to the form inputs */
+/* Style form inputs */
 .custom-modal-body input,
 .custom-modal-body textarea {
-  border-radius: 8px; /* Rounded inputs */
+  border-radius: 0.5rem;
   border: 1px solid #ccc;
-  padding: 10px;
+  padding: 1rem;
   width: 100%;
 }
+/* Adjust secondary button color */
 .custom-modal .btn-secondary {
   color: #fff;
-  background-color: #6c757d; /* Secondary button color */
+  background-color: #6c757d;
+}
+/* Media queries for responsiveness */
+@media (max-width: 48em) { /* For tablets and smaller screens (768px) */
+  .custom-modal .modal-content {
+    max-width: 35rem; /* Slightly narrower */
+    padding: 1.5rem;
+  }
+  .custom-modal-title {
+    font-size: 1.5rem;
+  }
+  .custom-modal-body {
+    font-size: 0.9rem;
+  }
+}
+@media (max-width: 36em) { /* For mobile screens (576px) */
+  .custom-modal .modal-content {
+    max-width: 90%; /* Fit to screen */
+    padding: 1rem;
+  }
+  .custom-modal-title {
+    font-size: 1.3rem;
+  }
+  .custom-modal-body {
+    font-size: 0.8rem;
+  }
 }
 
 
@@ -269,7 +306,7 @@
 }
 
 .calendar-day.available {
-  background-color: #b8a068;
+  background-color: #b99c78;
   color: white;
 }
 
@@ -284,6 +321,131 @@
 
 .schedule-times li {
   margin-bottom: 10px;
+}
+
+
+/* Faq CSS */
+@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css");
+
+/* Global Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
+  background: #eee;
+  color: #333;
+}
+
+/* FAQ Header */
+.faq-header {
+  background: #fff;
+  color: #333;
+  padding: 20px;
+  border-bottom: 2px solid #eee;
+}
+
+.faq-header h1 {
+  font-size: 20px; /* Reduced size from 24px to 20px */
+  font-weight: 600;
+  margin-bottom: 10px; /* Optional: Add spacing below the title */
+}
+
+.faq-header p {
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+/* FAQ Container */
+.faq-container {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-top: 30px;
+}
+
+/* FAQ Items */
+.faq-item {
+  background-color: #fff;
+  padding: 15px;
+  border: 1px solid #eee;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.faq-item .faq-question {
+  color: #333;
+  font-weight: bold;
+}
+
+.faq-item .faq-answer {
+  color: #555;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+/* Search Bar */
+.faq-search-bar input {
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 5px;
+  width: 50%;
+  margin: 0 auto;
+  display: block;
+}
+
+/* Steps Section */
+.step-icon {
+  background: #003300; /* Primary color for step icons */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.step-icon i {
+  font-size: 40px;
+  color: #fff;
+}
+
+ul {
+  padding-left: 20px;
+}
+
+ul li {
+  list-style: disc;
+  margin-bottom: 5px;
+}
+
+/* FAQ Page */
+.faqPage {
+  background-color: #f9f9f9;
+  min-height: 100vh;
+  padding-top: 20px;
+}
+
+/* FAQ Start Section */
+.faqStart {
+  max-width: 1000px;
+  margin: 0 auto;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design */
+@media (min-width: 1360px) {
+  .faq-container {
+    max-width: 1280px;
+    margin: 0 auto;
+  }
 }
 
 

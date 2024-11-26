@@ -69,50 +69,29 @@ const Navbar = () => {
   return (
     <header>
       <div className="header-area">
-        <div className="header-top_area">
-          <div className="container">
-            <div className="row">
-              <div className="col-xl-6 col-md-6">
-                <div className="social_media_links">
-                  <NavLink to='#'>
-                    <i className="fa fa-linkedin"></i>
-                  </NavLink>
-                  <NavLink to='#'>
-                    <i className="fa fa-facebook"></i>
-                  </NavLink>
-                  <NavLink to='#'>
-                    <i className="fa fa-google-plus"></i>
-                  </NavLink>
-                </div>
-              </div>
-              <div className="col-xl-6 col-md-6">
-                <div className="short_contact_list">
-                  <ul>
-                    <li><NavLink to='#'> <i className="fa fa-envelope"></i> info@docmed.com</NavLink></li>
-                    <li><NavLink to='#'> <i className="fa fa-phone"></i> 160160</NavLink></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
         <div id="sticky-header" className="main-header-area">
           <div className="container">
             <div className="row align-items-center">
-              <div className="col-xl-3 col-lg-2">
+              <div className="col">
                 <div className="logo">
                   <NavLink to="/">
                     <img src={logo} alt="Konsulta Specialista Clinic's logo" width="100vw" height="100vh" />
                   </NavLink>
                 </div>
               </div>
+              <div className="col" style={{marginLeft: '-5.5em'}}>
+                <NavLink to='/'>
+                    <h5>Konsulta Specialista Clinic</h5>
+                  </NavLink>
+              </div>
+
               <div className="col-xl-6 col-lg-7">
                 <div className="main-menu d-none d-lg-block">
                   <nav>
                     <ul id="navigation">
                       <li><NavLink to="/" activeclassname="active">Home</NavLink></li>
                       <li><NavLink to="/pages/Services" activeclassname="active">Services</NavLink></li>
-                      <li><NavLink to="/pages/Doctors" activeclassname="active">Doctors</NavLink></li>
+                      <li><NavLink to="/pages/Faq" activeclassname="active">FAq</NavLink></li>
                       <li><NavLink to="/pages/Map" activeclassname="active">Map</NavLink></li>
                     </ul>
                   </nav>

@@ -414,13 +414,13 @@ h3 {
 /* line 29, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_btn.scss */
 .boxed-btn3 {
   /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#0181f5+0,5db2ff+100 */
-  background: #b8a068;
+  background: #b99c78;
   /* Old browsers */
-  background: -moz-linear-gradient(left, #b8a068 0%, #dbc593 100%);
+  background: -moz-linear-gradient(left, #b99c78 0%, #a78d6e 100%);
   /* FF3.6-15 */
-  background: -webkit-linear-gradient(left, #b8a068 0%, #dbc593 100%);
+  background: -webkit-linear-gradient(left, #b99c78 0%, #a78d6e 100%);
   /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to right, #b8a068 0%, #dbc593 100%);
+  background: linear-gradient(to right, #b99c78 0%, #a78d6e 100%);
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0181f5', endColorstr='#5db2ff',GradientType=1 );
   /* IE6-9 */
@@ -448,8 +448,8 @@ h3 {
 /* line 51, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_btn.scss */
 .boxed-btn3:hover {
   background: #fff;
-  color: #b8a068 !important;
-  border: 1px solid #b8a068;
+  color: #b99c78 !important;
+  border: 1px solid #b99c78;
 }
 
 /* line 56, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_btn.scss */
@@ -1182,8 +1182,7 @@ h3 {
 
 /* line 255, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_header.scss */
 .header-area .header-top_area .social_media_links a {
-  font-size: 15px;
-  color: #C7C7C7;
+  color: #727070;
   margin-right: 12px;
 }
 
@@ -2840,7 +2839,7 @@ h3 {
 
 /* line 1, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_service.scss */
 .service_area {
-  background: #b8a068;
+  background: #b99c78;
 }
 
 /* line 3, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_service.scss */
@@ -2899,7 +2898,7 @@ h3 {
 
 /* line 40, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_service.scss */
 .service_area .col-xl-4:nth-child(2) .single_service {
-  background: #b8a068;
+  background: #b99c78;
 }
 
 /* line 1, C:/Users/SPN Graphics/Desktop/CL September/210 Medical/HTML/scss/_experts.scss */
