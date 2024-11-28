@@ -100,12 +100,12 @@ const Navbar = () => {
 
                   <div className={`collapse navbar-collapse ${isNavbarOpen ? 'show' : ''}`} id="navbarNavDropdown">
                     <ul className="navbar-nav">
-                      <li className="nav-item"><NavLink to="/" className="nav-link">Home</NavLink></li>
-                      <li className="nav-item"><NavLink to="/pages/Services" className="nav-link">Services</NavLink></li>
-                      <li className="nav-item"><NavLink to="/pages/HealthAwareness" className="nav-link">Health Awareness</NavLink></li>
-                      <li className="nav-item"><NavLink to="/pages/Faq" className="nav-link">FAQ</NavLink></li>
-                      <li className="nav-item"><NavLink to="/pages/Map" className="nav-link">Contact Us</NavLink></li>
-                      <li className="nav-item"><NavLink to="/pages/About" className="nav-link">About Us</NavLink></li>
+                      <li className="nav-item"><NavLink to="/" className="nav-link" style={({ isActive }) => ({ textDecoration: isActive ? 'underline' : 'none', fontWeight: isActive ? 'bolder': 'normal',})}>Home</NavLink></li>
+                      <li className="nav-item"><NavLink to="/pages/Services" className="nav-link" style={({ isActive }) => ({ textDecoration: isActive ? 'underline' : 'none', fontWeight: isActive ? 'bolder': 'normal',})}>Services</NavLink></li>
+                      <li className="nav-item"><NavLink to="/pages/HealthAwareness" className="nav-link" style={({ isActive }) => ({ textDecoration: isActive ? 'underline' : 'none', fontWeight: isActive ? 'bolder': 'normal',})}>Health Awareness</NavLink></li>
+                      <li className="nav-item"><NavLink to="/pages/Faq" className="nav-link" style={({ isActive }) => ({ textDecoration: isActive ? 'underline' : 'none', fontWeight: isActive ? 'bolder': 'normal',})}>FAQ</NavLink></li>
+                      <li className="nav-item"><NavLink to="/pages/Map" className="nav-link" style={({ isActive }) => ({ textDecoration: isActive ? 'underline' : 'none', fontWeight: isActive ? 'bolder': 'normal',})}>Contact Us</NavLink></li>
+                      <li className="nav-item"><NavLink to="/pages/About" className="nav-link" style={({ isActive }) => ({ textDecoration: isActive ? 'underline' : 'none', fontWeight: isActive ? 'bolder': 'normal',})}>About Us</NavLink></li>
                       <li className="nav-item">
                         <button onClick={handleShow} className="btn btn3">Make an Appointment</button>
                       </li>
