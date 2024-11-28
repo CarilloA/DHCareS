@@ -18,7 +18,7 @@ const Map = () => {
             />
 
       </div>
-      <p>Find us at the University of Baguio using the map above.</p>
+      <p>Find us at 4M-10 4th floor, Porta Vaga Mall, Session Road , Baguio City, Philippines, 2600 using the map above.</p>
     </div>
   );
 };

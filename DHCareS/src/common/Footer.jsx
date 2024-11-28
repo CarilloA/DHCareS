@@ -58,7 +58,7 @@ const Footer = () => {
                   <h3 className="footer_title">Useful Links</h3>
                   <ul>
                     <li><NavLink to='/pages/About'>About</NavLink></li>
-                    <li><NavLink to='/pages/Events'>Events</NavLink></li>
+                    <li><NavLink to="/pages/HealthAwareness" activeclassname="active">HealthAwareness</NavLink></li>
                     <li><NavLink to='/pages/Faq'>Faq</NavLink></li>
                     <li><NavLink to='/' onClick={handleShow}>Appointment</NavLink></li>
                   </ul>
