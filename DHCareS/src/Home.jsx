@@ -8,6 +8,12 @@ import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import department3 from './assets/img/department/3.png';
 import medicalClinic from './assets/img/department/medicalClinic.png';
 import painManagement from './assets/img/department/painManagement.png';
+import konsulta1 from './assets/img/department/konsulta1.jpg';
+import konsulta2 from './assets/img/department/konsulta2.png';
+import konsulta3 from './assets/img/department/konsulta3.png';
+
+
+
 
 
 import lung from './assets/img/services/lung.png';
@@ -18,9 +24,9 @@ import arthritis from './assets/img/services/arthritis.png';
 const Events = () => {
   // Event data
   const events = [
-    { imgSrc: medicalClinic, title: "Health care", subTitle: "For Everyone", description: "In healthcare sector, service excellence is the facility of the hospital as healthcare service provider to consistently." },
-    { imgSrc: department3, title: "Health care", subTitle: "For Everyone", description: "In healthcare sector, service excellence is the facility of the hospital as healthcare service provider to consistently." },
-    { imgSrc: painManagement, title: "Health care", subTitle: "For Everyone", description: "In healthcare sector, service excellence is the facility of the hospital as healthcare service provider to consistently." },
+    { imgSrc: konsulta1, title: "Health care", subTitle: "For Everyone", description: "In healthcare sector, service excellence is the facility of the hospital as healthcare service provider to consistently." },
+    { imgSrc: konsulta2, title: "Health care", subTitle: "For Everyone", description: "In healthcare sector, service excellence is the facility of the hospital as healthcare service provider to consistently." },
+    { imgSrc: konsulta1, title: "Health care", subTitle: "For Everyone", description: "In healthcare sector, service excellence is the facility of the hospital as healthcare service provider to consistently." },
   ];
 
   return (

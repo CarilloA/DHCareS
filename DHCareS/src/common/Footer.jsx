@@ -27,17 +27,12 @@ const Footer = () => {
                   <div className="social_links">
                     <ul className="d-flex list-unstyled">
                       <li className="me-3">
-                        <NavLink to='https://facebook.com' className="social-icon">
+                        <NavLink to='https://www.facebook.com/p/Konsulta-Specialista-Clinic-100077613285900/' className="social-icon">
                           <i className="ti-facebook"></i>
                         </NavLink>
                       </li>
-                      <li className="me-3">
-                        <NavLink to='https://x.com/' className="social-icon">
-                          <i className="ti-twitter-alt"></i>
-                        </NavLink>
-                      </li>
                       <li>
-                        <NavLink to='https://instagram.com' className="social-icon">
+                        <NavLink to='https://www.instagram.com/konsulta_specialista_clinic/' className="social-icon">
                           <i className="fa fa-instagram"></i>
                         </NavLink>
                       </li>
@@ -51,7 +46,6 @@ const Footer = () => {
                   <h3 className="footer_title">Services</h3>
                   <ul>
                     <li><NavLink to='/'>Elderly Care</NavLink></li>
-                    <li><NavLink to='/'>Skin Care</NavLink></li>
                     <li><NavLink to='/'>Pathology</NavLink></li>
                     <li><NavLink to='/'>Medicine</NavLink></li>
                     <li><NavLink to='/'>Dental</NavLink></li>
@@ -65,7 +59,7 @@ const Footer = () => {
                   <ul>
                     <li><NavLink to='/pages/About'>About</NavLink></li>
                     <li><NavLink to='/pages/Events'>Events</NavLink></li>
-                    <li><NavLink to='/pages/Contact'>Contact</NavLink></li>
+                    <li><NavLink to='/pages/Faq'>Faq</NavLink></li>
                     <li><NavLink to='/' onClick={handleShow}>Appointment</NavLink></li>
                   </ul>
                 </div>
@@ -130,7 +124,7 @@ const Footer = () => {
                   <i className="fa fa-map-marker">&nbsp;&nbsp;Porta Vaga Mall, Session Road , Baguio City, Philippines, 2600</i> <br />
                   <i className="fa fa-location-arrow">&nbsp;&nbsp;4M-10 4th floor </i><br />
                   <i className="fa fa-phone">&nbsp;&nbsp;0945 230 2676 </i><br />
-                  <i className="fa fa-envelope">&nbsp;&nbsp;mdc@e.ubaguio.edu</i>
+                  <i className="fa fa-envelope">&nbsp;&nbsp;konsultapv2022@gmail.com</i>
                   </p>
                 </div>
               </div>

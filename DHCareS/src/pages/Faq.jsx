@@ -23,11 +23,6 @@ const Faq = () => {
 
   const faqData = [
     {
-      question: "How do I book an appointment?",
-      answer:
-        "You can book an appointment on-site, via cellphone/landline, or through Facebook Messenger. Contact us at +639452302676 or find us at Konsulta Specialista Clinic on Facebook.",
-    },
-    {
       question: "What are the clinic hours?",
       answer: "The clinic is open from 8:0 AM to 7:00 PM, Monday to Friday.",
     },
@@ -110,10 +105,17 @@ const Faq = () => {
       <section className="consultation-process container py-5">
         <div className="row justify-content-center text-center mb-4">
           <div className="col-lg-8 col-xxl-7">
-            <h5 className="display-5 fw-bold">How to Schedule an Appointment</h5>
-            <p className="lead">
-              Follow these simple steps to book your appointment at Konsulta
-              Specialista Clinic
+            <h5
+              className="fw-bold"
+              style={{
+                fontSize: "1.25rem", // Adjust the size as needed
+                fontWeight: "600",   // Optional: tweak the font weight
+              }}
+            >
+              How to Schedule an Appointment
+            </h5>
+            <p className="lead text-muted mt-2">
+              Follow these simple steps to book your appointment at Konsulta Specialista Clinic
             </p>
           </div>
         </div>
@@ -121,19 +123,32 @@ const Faq = () => {
           {steps.map((step, index) => (
             <div className="col-md-4" key={index}>
               <div className="text-center position-relative mb-4">
+                {/* Step Icon */}
                 <div
-                  className="step-icon mx-auto bg-primary border rounded-circle d-flex align-items-center justify-content-center"
-                  style={{ width: "120px", height: "120px" }}
+                  className="step-icon mx-auto bg-primary border rounded-circle d-flex align-items-center justify-content-center shadow"
+                  style={{
+                    width: "100px",
+                    height: "100px",
+                    backgroundColor: "#003300", // Clinic's brand color
+                    color: "#fff",
+                  }}
                 >
-                  <i className={`${step.icon} text-white`} style={{ fontSize: "40px" }}></i>
+                  <i
+                    className={`${step.icon} text-white`}
+                    style={{ fontSize: "40px" }}
+                    aria-hidden="true" // Accessibility improvement
+                  ></i>
                 </div>
-                <h4 className="mt-3 fs-5">{step.title}</h4>
-                <p className="lead text-muted mt-4 fs-5 px-lg-3">{step.description}</p>
+                {/* Step Title */}
+                <h4 className="mt-3 fs-5 fw-bold">{step.title}</h4>
+                {/* Step Description */}
+                <p className="lead text-muted mt-4 fs-6 px-lg-3">{step.description}</p>
               </div>
             </div>
           ))}
         </div>
       </section>
+
 
       {/* Search Bar for FAQs */}
       <div className="faq-search-bar text-center my-4">

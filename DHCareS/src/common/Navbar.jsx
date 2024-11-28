@@ -91,8 +91,10 @@ const Navbar = () => {
                     <ul id="navigation">
                       <li><NavLink to="/" activeclassname="active">Home</NavLink></li>
                       <li><NavLink to="/pages/Services" activeclassname="active">Services</NavLink></li>
+                      <li><NavLink to="/pages/HealthAwareness" activeclassname="active">HealthAwareness</NavLink></li>
                       <li><NavLink to="/pages/Faq" activeclassname="active">FAq</NavLink></li>
                       <li><NavLink to="/pages/Map" activeclassname="active">Map</NavLink></li>
+                      
                     </ul>
                   </nav>
                 </div>
