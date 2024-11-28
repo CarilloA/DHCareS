@@ -221,7 +221,7 @@ const Services = () => {
             <div key={index} className="col-xl-3 col-md-6 col-lg-3">
               <div className="single_department">
                 <div className="department_thumb">
-                  <img src={department.imgSrc} alt={department.title} style={{width: '30vw', height: '30vh'}}/>
+                  <img src={department.imgSrc} className="d-block w-100 img-fluid" alt={department.title} style={{width: '30vw', height: '30vh'}}/>
                 </div>
                 <div className="department_content" style={{height: '12em'}}>
                   <h3><NavLink to='#'>{department.title}</NavLink></h3>
@@ -371,5 +371,3 @@ const Home = () => {
 };
 
 export default Home;
-
-

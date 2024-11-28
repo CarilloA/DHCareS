@@ -66,16 +66,16 @@
 .btn3 {
   margin-left: 1em;
   padding: 2px 10px;
-  background: #b99c78;
-  color: #fff;
+  background: #b99c78 !important;
+  color: #fff !important;
   border: none;
   border-radius: 4px;
   cursor: pointer;
 }
 .btn3:hover{
-  background: #fff;
+  background: #fff !important;
   color: #b99c78 !important;
-  border: 1px solid #b99c78;
+  border: 1px solid #b99c78 !important;
 }
 
 
@@ -104,7 +104,20 @@
   border-radius: 10px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
   text-align: left;
+  width: auto;
+  display: inline-block;
 }
+
+.carousel-caption {
+  top: 20%;
+  left: 50%;
+  text-align: center;
+}
+
+.carousel-caption-content p {
+  margin: 0;  /* Remove default margin for better control */
+}
+
 
 /* Title Styling */
 .carousel-title {
@@ -171,6 +184,13 @@
 .header-top_area-style {
   padding-top: 1em;
   margin-bottom: -1.8em;
+}
+
+/* Custom CSS to remove bullets from the navbar */
+.nav-item {
+  list-style-type: none !important; /* Removes bullets */
+  padding-left: 0; /* Removes default padding */
+  margin: 0; /* Ensures no additional space is added between items */
 }
 
 /* ########################## */
@@ -249,78 +269,58 @@
 
 /* services.jsx css */
 .services-container {
-  margin: 20px;
-  text-align: center; /* Aligning the container text to center */
+  padding: 0 20px;
+  background-color: #f9f9f9;
 }
 
-.services-list {
+.services-row {
   display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center; /* Centering the service items */
-  align-items: center;
+  flex-wrap: wrap; /* Allow tables to wrap to the next line */
+  gap: 20px; /* Space between tables */
+  justify-content: space-around; /* Spread tables evenly */
 }
 
-.service-item {
-  background-color: #f8f9fa;
+.category-container {
+  flex: 1 1 calc(50% - 20px); /* Each table takes 50% width minus the gap */
+  margin-bottom: 40px;
+  min-width: 300px; /* Ensure tables don't shrink too much */
+}
+
+.services-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.services-table th,
+.services-table td {
   border: 1px solid #ddd;
-  padding: 20px;
-  width: 250px;
-  cursor: pointer;
-  border-radius: 5px;
-  text-align: center; /* Centering the content inside each service item */
+  padding: 10px;
+  text-align: left;
 }
 
+.services-table th {
+  background-color: #f4f4f4;
+  font-weight: bold;
+}
+
+.btn1 {
+  margin-right: 10px;
+  padding: 5px 10px;
+  border: none;
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+}
 
 .learn-more-link {
-  display: block;
-  margin-top: 10px;
+  color: #81592b;
   text-decoration: none;
-  color: #d1921c;
 }
 
 .learn-more-link:hover {
   text-decoration: underline;
-}
-
-.calendar-container {
-  margin-top: 20px;
-}
-
-.calendar-grid {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  gap: 5px;
-  margin-top: 20px;
-}
-
-.calendar-day {
-  padding: 10px;
-  text-align: center;
-  cursor: pointer;
-  border-radius: 5px;
-}
-
-.calendar-day:hover {
-  background-color: #f0f0f0;
-}
-
-.calendar-day.available {
-  background-color: #b99c78;
-  color: white;
-}
-
-.schedule-times {
-  margin-top: 20px;
-}
-
-.schedule-times ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-.schedule-times li {
-  margin-bottom: 10px;
 }
 
 

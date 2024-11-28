@@ -6,9 +6,12 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const Services = () => {
+  // For category filter
+  const [selectedCategory, setSelectedCategory] = useState('All');
+
   const [selectedService, setSelectedService] = useState(null);
-  const [selectedDate, setSelectedDate] = useState(null);
-  const [selectedTime, setSelectedTime] = useState(null);
+  const [selectedDate, setSelectedDate] = useState('');
+  const [selectedTime, setSelectedTime] = useState('');
 
   // Modal for Appointment and Alert message
   const [show, setShow] = useState(false);
@@ -16,12 +19,7 @@ const Services = () => {
   const [emailError, setEmailError] = useState('');
 
   const handleClose = () => setShow(false);
-  const handleShow = (time) => {
-    setSelectedTime(time);  // Set the selected time before showing the modal
-    setShow(true);           // Show the modal
-  };
-  
-  // const handleShow = () => setShow(true);
+  const handleShow = () => setShow(true);
 
   const validateEmail = (email) => {
     const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -75,232 +73,283 @@ const Services = () => {
   };
 
 
-  // Sample service data
+  // service data
   const servicesData = [
-    { id: 1, name: 'Elderly care, medical consultations for age-related conditions', description: 'Medical consultations and care for elderly patients with age-related health issues.', learnMoreLink: '/consultation' },
-    { id: 2, name: 'Diagnosis and treatment of lung diseases, respiratory consultations', description: 'Diagnosis and treatment for lung diseases like asthma and pneumonia.', learnMoreLink: '/check-up' },
-    { id: 3, name: 'Kidney disease diagnosis, dialysis, kidney transplants', description: 'Care for kidney disease, dialysis, and kidney transplants.', learnMoreLink: '/dental-care' },
-    { id: 4, name: 'Treatment of arthritis, autoimmune diseases, joint disorders', description: 'Treatment for arthritis and autoimmune joint disorders to improve mobility.', learnMoreLink: '/skin-care' },
-    { id: 5, name: 'Allergy tests, immunotherapy, reproductive health consultations', description: 'Allergy testing, immunotherapy, and reproductive health consultations.', learnMoreLink: '/skin-care' },
-    { id: 6, name: 'Diagnosis and treatment of infectious diseases, vaccinations', description: 'Treatment for infectious diseases and preventive vaccinations.', learnMoreLink: '/skin-care' },
-    { id: 7, name: 'Women’s health, pediatric gynecology, adolescent care', description: 'Care for women’s health, pediatric gynecology, and adolescent care.', learnMoreLink: '/skin-care' },
-    { id: 8, name: 'General pediatric care, clinical and metabolic genetics, newborn screening', description: 'Pediatric care, genetic testing, and newborn screening for early detection.', learnMoreLink: '/skin-care' },
-    { id: 9, name: 'Cleft surgery, ear reconstruction, aesthetic facial surgery', description: 'Surgical services for cleft lip repair, ear reconstruction, and facial surgery.', learnMoreLink: '/skin-care' },
-    { id: 10, name: 'Weight management, medical nutrition counseling', description: 'Personalized weight management and nutrition counseling for better health.', learnMoreLink: '/skin-care' },
-    { id: 11, name: 'Sleep disorders, ENT care, head and neck surgeries', description: 'Diagnosis and treatment of sleep disorders and ENT surgeries for head and neck issues.', learnMoreLink: '/skin-care' },
-    { id: 12, name: 'Orthopedic surgery, hand surgery, limb deformity correction', description: 'Orthopedic care, including hand surgery and limb deformity correction.', learnMoreLink: '/skin-care' },
+    {
+      id: 1,
+      name: 'Adult Care',
+      learnMoreLink: '/', 
+      services: [
+        'Arthritis', 'Cardiology', 'Infectious Disease', 'INternal Medecine', 'Nephrology & Kidney Transplant', 'Optimal Weight Management', 'Pulmonology', 'Reproductive Immunology', 'Rheumatology', 
+      ],
+    },
+    {
+      id: 2,
+      name: 'Adult/Child Care',
+      learnMoreLink: '/',
+      services: [
+        'Allergy/Immunology', 'Genetics', 'Medical Nutrition', 'Vaccination', 
+      ],
+    },
+    {
+      id: 3,
+      name: 'Child Care',
+      learnMoreLink: '/', 
+      services: [
+        'General Pedriatics',
+      ],
+    },
+    {
+      id: 4,
+      name: 'Old Age Care',
+      learnMoreLink: '/', 
+      services: [
+        'Geriatic Medicine',
+      ],
+    },
+    {
+      id: 5,
+      name: 'Orthopaedic Surgery',
+      learnMoreLink: '/', 
+      services: [
+        'General Orthopaedics', 'Hands and Reconstructive Microsurgery', 'Methods of llizarov & Limb Deformity Correction', 'Hip, Knee, & Ankle Reconstruction', 'Foot & Ankle Surgery', 
+      ],
+    },
+    {
+      id: 6,
+      name: "Women's Health",
+      learnMoreLink: '/', 
+      services: [
+        'OB-GYN', 'Pediatric & Adolescent Gynecology', 
+      ],
+    },
+    {
+      id: 7,
+      name: 'ENT-Head and Neck Surgery',
+      learnMoreLink: '/', 
+      services: [
+        'Sleep Medicine', 'Facial Plastic & Aesthetics', 'Cleft Surgery & Ear Reconstruction', 
+      ],
+    },
   ];
-  
-  
 
   // Sample schedule data for each service
   const schedulesData = {
     1: [
-      { date: '2024-11-04', times: ['9:00 AM - 12:00 PM', '1:00 PM - 4:00 PM'] },
-      { date: '2024-11-02', times: ['10:00 AM - 1:00 PM'] }
+      { date: 'Tuesday', times: ['9:00 AM - 12:00 PM', '1:00 PM - 4:00 PM'] },
+      { date: 'Wednesay', times: ['10:00 AM - 1:00 PM'] },
+      { date: 'Friday', times: ['9:00 AM - 12:00 PM'] },
     ],
     2: [
-      { date: '2024-11-05', times: ['8:00 AM - 11:00 AM', '2:00 PM - 5:00 PM'] },
-      { date: '2024-11-06', times: ['9:00 AM - 12:00 PM'] }
+      { date: 'Monday', times: ['8:00 AM - 11:00 AM', '2:00 PM - 5:00 PM'] },
+      { date: 'Friday', times: ['9:00 AM - 12:00 PM'] }
     ],
     3: [
-      { date: '2024-11-07', times: ['9:00 AM - 12:00 PM', '3:00 PM - 6:00 PM'] }
+      { date: 'Wednesay', times: ['9:00 AM - 12:00 PM', '3:00 PM - 6:00 PM'] }
     ],
     4: [
-      { date: '2024-11-08', times: ['10:00 AM - 1:00 PM'] },
-      { date: '2024-11-09', times: ['11:00 AM - 2:00 PM'] }
+      { date: 'Wednesay', times: ['10:00 AM - 1:00 PM'] },
+      { date: 'Thursday', times: ['11:00 AM - 2:00 PM'] }
     ],
     5: [
-        { date: '2024-11-11', times: ['8:00 AM - 11:00 AM', '2:00 PM - 5:00 PM'] },
-        { date: '2024-11-12', times: ['9:00 AM - 12:00 PM'] }
+        { date: 'Monday', times: ['8:00 AM - 11:00 AM', '2:00 PM - 5:00 PM'] },
+        { date: 'Tuesday', times: ['9:00 AM - 12:00 PM'] }
     ],
     6: [
-        { date: '2024-11-13', times: ['8:00 AM - 11:00 AM', '2:00 PM - 5:00 PM'] },
-        { date: '2024-11-14', times: ['9:00 AM - 12:00 PM'] }
+        { date: 'Wednesay', times: ['8:00 AM - 11:00 AM', '2:00 PM - 5:00 PM'] },
+        { date: 'Thursday', times: ['9:00 AM - 12:00 PM'] }
     ],
     7: [
-        { date: '2024-11-15', times: ['8:00 AM - 11:00 AM', '2:00 PM - 5:00 PM'] },
-        { date: '2024-11-26', times: ['9:00 AM - 12:00 PM'] }
-    ],
-    8: [
-        { date: '2024-11-18', times: ['8:00 AM - 11:00 AM', '2:00 PM - 5:00 PM'] },
-        { date: '2024-11-19', times: ['9:00 AM - 12:00 PM'] }
-    ],
-    9: [
-        { date: '2024-11-20', times: ['8:00 AM - 11:00 AM', '2:00 PM - 5:00 PM'] },
-        { date: '2024-11-21', times: ['9:00 AM - 12:00 PM'] }
-    ],
-    10: [
-        { date: '2024-11-22', times: ['8:00 AM - 11:00 AM', '2:00 PM - 5:00 PM'] },
-        { date: '2024-11-25', times: ['9:00 AM - 12:00 PM'] }
-    ],
-    11: [
-        { date: '2024-11-29', times: ['8:00 AM - 11:00 AM', '2:00 PM - 5:00 PM'] },
-        { date: '2024-11-30', times: ['9:00 AM - 12:00 PM'] }
-    ],
-    12: [
-        { date: '2024-11-28', times: ['8:00 AM - 11:00 AM', '2:00 PM - 5:00 PM'] },
-        { date: '2024-11-30', times: ['9:00 AM - 12:00 PM'] }
+        { date: 'Tuesday', times: ['8:00 AM - 11:00 AM', '2:00 PM - 5:00 PM'] },
+        { date: 'Friday', times: ['9:00 AM - 12:00 PM'] }
     ],
     
   };
 
+  // For category filter
+  const filteredCategory =
+  selectedCategory === 'All'
+    ? servicesData
+    : servicesData.filter((category) => category.name === selectedCategory);
+
   const handleServiceClick = (id) => {
     setSelectedService(id);
-    setSelectedDate(null);  // Reset the selected date when switching services
+    handleShow(); // Open the modal
   };
 
-  // Generate a list of all days in the month
-  const generateCalendar = () => {
-    const start = startOfMonth(new Date());
-    const end = endOfMonth(new Date());
-    return eachDayOfInterval({ start, end });
+  const onDateChange = (event) => {
+    setSelectedDate(event.target.value);
+    setSelectedTime(''); // Reset the selected time when date changes
   };
 
-  // Check if a specific date has available times for the selected service
-  const hasAvailableTimes = (date) => {
-    if (selectedService && schedulesData[selectedService]) {
-      const dateString = format(date, 'yyyy-MM-dd');
-      return schedulesData[selectedService].some(
-        (schedule) => schedule.date === dateString
-      );
-    }
-    return false;
-  };
+  // Generate available dates based on the selected service
+  const availableDates = selectedService
+    ? schedulesData[selectedService].map((schedule) => schedule.date)
+    : [];
 
-  // Handle selecting a date from the calendar
-  const handleDateClick = (date) => {
-    const dateString = format(date, 'yyyy-MM-dd');
-    setSelectedDate(dateString);
-  };
+  // Generate available times based on the selected date
+  const availableTimes =
+    selectedService && selectedDate
+      ? schedulesData[selectedService]
+          .find((schedule) => schedule.date === selectedDate)?.times || []
+      : [];
 
-  return (
-    <div className="services-container">
-      <h1 className="text-center">Available Services</h1>
+      return (
+        <div className="services-container">
+          <h1 className="text-center">Services Offered</h1>
 
-      {/* Display services */}
-      <div className="services-list">
-        {servicesData.map((service) => (
-          <div key={service.id} className="service-item">
-            <h3>{service.name}</h3>
-            <p>{service.description}</p>
-            <button className='btn1' onClick={() => handleServiceClick(service.id)}>See Schedules</button>
-            <Link to={service.learnMoreLink} className="learn-more-link">Learn More</Link>
+           {/* Service Category Filter */}
+          <div style={{ margin: '20px 0', textAlign: 'center' }}>
+            <select
+              value={selectedCategory}
+              onChange={(e) => setSelectedCategory(e.target.value)}
+              style={{
+                padding: '10px',
+                borderRadius: '5px',
+                border: '1px solid #003300',
+                fontSize: '16px',
+              }}
+            >
+              <option value="All">All Categories</option>
+              {servicesData.map((category) => (
+                <option key={category.id} value={category.name}>
+                  {category.name}
+                </option>
+              ))}
+            </select>
           </div>
-        ))}
-      </div>
-
-      {/* Show calendar if a service is selected */}
-      {selectedService && (
-        <div className="calendar-container">
-          <h2>
-            Available Schedule for {servicesData.find((service) => service.id === selectedService).name}
-          </h2>
-
-          {/* Calendar grid */}
-          <div className="calendar-grid">
-            {generateCalendar().map((date) => (
-              <div
-                key={date}
-                className={`calendar-day ${hasAvailableTimes(date) ? 'available' : ''}`}
-                onClick={() => hasAvailableTimes(date) && handleDateClick(date)}
-              >
-                {format(date, 'd')}
-              </div>
-            ))}
+    
+          {/* Services List */}
+    <div className="services-row">
+      {filteredCategory.map((category) => (
+        <div key={category.id} className="category-container">
+          <div className="d-flex align-items-center">
+            <h2 className="mr-3">{category.name}</h2>
+            <button className="btn1" onClick={() => handleServiceClick(category.id)}>
+              Make an Appointment
+            </button>
           </div>
-
-          {/* Show times for the selected date */}
-          {selectedDate && (
-            <div className="schedule-times">
-              <h3>Available Times for {selectedDate}</h3>
-              <ul>
-                {schedulesData[selectedService]
-                  .filter((schedule) => schedule.date === selectedDate)
-                  .map((schedule, index) => (
-                    <li key={index}>
-                      {schedule.times.map((time, idx) => (
-                        <div key={idx}>
-                          <p>{time}
-                          <button
-                            key={idx}
-                            onClick={() => handleShow(time)} // Pass the time when clicked
-                            className='btn3'
-                            // style={{ marginLeft: '1em', width: '20em', height: '2em' }}
-                          >
-                            Make an Appointment
-                          </button></p>
-                        </div>
-                      ))}
-                    </li>
-                  ))}
-              </ul>
-            </div>
-          )}
+          <table className="services-table">
+            <thead>
+              <tr>
+                <th>Service Name</th>
+                <th>Category</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              {category.services.map((service, index) => (
+                <tr key={`${category.id}-${index}`}>
+                  <td>{service}</td>
+                  <td>{category.name}</td>
+                  <td>
+                    <Link to={category.learnMoreLink} className="learn-more-link">
+                      Learn More
+                    </Link>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
-      )}
-
-      {/* Modal to make an appointment */}
-      <Modal show={show} onHide={handleClose} centered dialogClassName="custom-modal">
-        <Modal.Header closeButton>
-          <Modal.Title className="custom-modal-title">
-            Make an Appointment
-          </Modal.Title>
-        </Modal.Header>
-        <Modal.Body className="custom-modal-body">
-          <Form onSubmit={onSubmit}>
-            <Form.Group className="mb-3" controlId="formName">
-              <Form.Label>Name</Form.Label>
-              <Form.Control type="text" name="name" placeholder="Enter your name" required />
-            </Form.Group>
-            <Form.Group className="mb-3" controlId="formEmail">
-              <Form.Label>Email</Form.Label>
-              <Form.Control type="email" name="email" placeholder="Enter your email" required isInvalid={!!emailError} />
-              <Form.Control.Feedback type="invalid">
-                {emailError}
-              </Form.Control.Feedback>
-            </Form.Group>
-            <Form.Group className="mb-3" controlId="formContact">
-              <Form.Label>Contact</Form.Label>
-              <Form.Control type="tel" name="contact" placeholder="Enter your contact number" required />
-            </Form.Group>
-            <Form.Group className="mb-3" controlId="formDate">
-              <Form.Label>Preferred Date</Form.Label>
-              <Form.Control type="date" name="date" value={selectedDate} readOnly required />
-            </Form.Group>
-            <Form.Group className="mb-3" controlId="formTime">
-              <Form.Label>Preferred Time</Form.Label>
-              <Form.Control 
-                type="text" 
-                name="time" 
-                value={selectedTime || ''}  // Bind selectedTime to the input value
-                readOnly 
-                required 
-              />
-            </Form.Group>
-            {/* <Form.Group className="mb-3" controlId="formTime">
-              <Form.Label>Preferred Time</Form.Label>
-              <Form.Control type="text" name="time" value={selectedTime} readOnly required />
-            </Form.Group> */}
-            <Form.Group controlId="formMessage">
-              <Form.Label>Reason</Form.Label>
-              <Form.Control as="textarea" name="message" rows={3} placeholder="You may add additional notes or requests" required />
-            </Form.Group>
-            <Modal.Footer>
-              <Button variant="secondary" onClick={handleClose}>
-                Close
-              </Button>
-              <Button type="submit" variant="primary" disabled={loading}>
-                {loading ? 'Submitting...' : 'Submit'}
-              </Button>
-            </Modal.Footer>
-          </Form>
-        </Modal.Body>
-      </Modal>
-
-      <ToastContainer />
+      ))}
     </div>
-  );
-};
+    
+          {/* Appointment Modal */}
+          <Modal show={show} onHide={handleClose} centered>
+            <Modal.Header closeButton>
+              <Modal.Title>Make an Appointment</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+              <Form onSubmit={onSubmit}>
+                {/* Name */}
+                <Form.Group className="mb-3">
+                  <Form.Label>Name</Form.Label>
+                  <Form.Control type="text" name="name" placeholder="Enter your name" required />
+                </Form.Group>
+    
+                {/* Email */}
+                <Form.Group className="mb-3">
+                  <Form.Label>Email</Form.Label>
+                  <Form.Control
+                    type="email"
+                    name="email"
+                    placeholder="Enter your email"
+                    required
+                    isInvalid={!!emailError}
+                  />
+                  <Form.Control.Feedback type="invalid">{emailError}</Form.Control.Feedback>
+                </Form.Group>
+
+                {/* Display Selected Category */}
+                <Form.Group className="mb-3">
+                  <Form.Label>Selected Category</Form.Label>
+                  <Form.Control
+                    type="text"
+                    value={servicesData.find(service => service.id === selectedService)?.name || ''}
+                    readOnly
+                  />
+                </Form.Group>
+    
+                {/* Available Dates */}
+                <Form.Group className="mb-3">
+                  <Form.Label>Preferred Date</Form.Label>
+                  <Form.Control
+                    as="select"
+                    value={selectedDate}
+                    onChange={onDateChange}
+                    required
+                  >
+                    <option value="">Select a date</option>
+                    {availableDates.map((date, index) => (
+                      <option key={index} value={date}>
+                        {date}
+                      </option>
+                    ))}
+                  </Form.Control>
+                </Form.Group>
+    
+                {/* Available Times */}
+                {selectedDate && (
+                  <Form.Group className="mb-3">
+                    <Form.Label>Preferred Time</Form.Label>
+                    <Form.Control
+                      as="select"
+                      value={selectedTime}
+                      onChange={(e) => setSelectedTime(e.target.value)}
+                      required
+                    >
+                      <option value="">Select a time</option>
+                      {availableTimes.map((time, index) => (
+                        <option key={index} value={time}>
+                          {time}
+                        </option>
+                      ))}
+                    </Form.Control>
+                  </Form.Group>
+                )}
+    
+                {/* Reason */}
+                <Form.Group className="mb-3">
+                  <Form.Label>Reason</Form.Label>
+                  <Form.Control as="textarea" rows={3} placeholder="Add notes or requests" />
+                </Form.Group>
+    
+                <Modal.Footer>
+                  <Button variant="secondary" onClick={handleClose}>
+                    Close
+                  </Button>
+                  <Button type="submit" variant="primary" disabled={loading}>
+                    {loading ? 'Submitting...' : 'Submit'}
+                  </Button>
+                </Modal.Footer>
+              </Form>
+            </Modal.Body>
+          </Modal>
+    
+          <ToastContainer />
+        </div>
+      );
+    };
 
 export default Services;

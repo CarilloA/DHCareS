@@ -11,6 +11,7 @@ const Navbar = () => {
   const [show, setShow] = useState(false);
   const [loading, setLoading] = useState(false);
   const [emailError, setEmailError] = useState('');
+  const [isNavbarOpen, setNavbarOpen] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -70,46 +71,47 @@ const Navbar = () => {
     <header>
       <div className="header-area">
         <div id="sticky-header" className="main-header-area">
-          <div className="container">
+          <div className="container-fluid">
             <div className="row align-items-center">
               <div className="col">
-                <div className="logo">
+                <div className="navbar-brand">
                   <NavLink to="/">
                     <img src={logo} alt="Konsulta Specialista Clinic's logo" width="100vw" height="100vh" />
+                    Konsulta Specialista Clinic
                   </NavLink>
                 </div>
-              </div>
-              <div className="col" style={{marginLeft: '-5.5em'}}>
-                <NavLink to='/'>
-                    <h5>Konsulta Specialista Clinic</h5>
-                  </NavLink>
               </div>
 
-              <div className="col-xl-6 col-lg-7">
-                <div className="main-menu d-none d-lg-block">
-                  <nav>
-                    <ul id="navigation">
-                      <li><NavLink to="/" activeclassname="active">Home</NavLink></li>
-                      <li><NavLink to="/pages/Services" activeclassname="active">Services</NavLink></li>
-                      <li><NavLink to="/pages/HealthAwareness" activeclassname="active">HealthAwareness</NavLink></li>
-                      <li><NavLink to="/pages/Faq" activeclassname="active">FAq</NavLink></li>
-                      <li><NavLink to="/pages/Map" activeclassname="active">Map</NavLink></li>
-                      
+              <div className="col">
+                <nav className="navbar navbar-expand-lg navbar-light">
+                  {/* Navbar toggler button for mobile view */}
+                  <button 
+                    className="navbar-toggler" 
+                    type="button" 
+                    data-bs-toggle="collapse" 
+                    data-bs-target="#navbarNavDropdown" 
+                    aria-controls="navbarNavDropdown" 
+                    aria-expanded={isNavbarOpen ? 'true' : 'false'} 
+                    aria-label="Toggle navigation"
+                    onClick={() => setNavbarOpen(!isNavbarOpen)}
+                  >
+                    <span className="navbar-toggler-icon"></span>
+                  </button>
+
+                  <div className={`collapse navbar-collapse ${isNavbarOpen ? 'show' : ''}`} id="navbarNavDropdown">
+                    <ul className="navbar-nav">
+                      <li className="nav-item"><NavLink to="/" className="nav-link">Home</NavLink></li>
+                      <li className="nav-item"><NavLink to="/pages/Services" className="nav-link">Services</NavLink></li>
+                      <li className="nav-item"><NavLink to="/pages/HealthAwareness" className="nav-link">Health Awareness</NavLink></li>
+                      <li className="nav-item"><NavLink to="/pages/Faq" className="nav-link">FAQ</NavLink></li>
+                      <li className="nav-item"><NavLink to="/pages/Map" className="nav-link">Contact Us</NavLink></li>
+                      <li className="nav-item"><NavLink to="/pages/About" className="nav-link">About Us</NavLink></li>
+                      <li className="nav-item">
+                        <button onClick={handleShow} className="btn btn3">Make an Appointment</button>
+                      </li>
                     </ul>
-                  </nav>
-                </div>
-              </div>
-              <div className="col-xl-3 col-lg-3 d-none d-lg-block">
-                <div className="Appointment">
-                  <div className="d-none d-lg-block" style={{backgroundColor: '#f5f5dc'}}>
-                    <Button onClick={handleShow} style={{ backgroundColor: '#b8a068', border: 'none'}}>
-                      Make an Appointment
-                    </Button>
                   </div>
-                </div>
-              </div>
-              <div className="col-12">
-                <div className="mobile_menu d-block d-lg-none"></div>
+                </nav>
               </div>
             </div>
           </div>
@@ -118,9 +120,7 @@ const Navbar = () => {
 
       <Modal show={show} onHide={handleClose} centered dialogClassName="custom-modal">
         <Modal.Header closeButton>
-          <Modal.Title className="custom-modal-title">
-            Make an Appointment
-          </Modal.Title>
+          <Modal.Title className="custom-modal-title">Make an Appointment</Modal.Title>
         </Modal.Header>
         <Modal.Body className="custom-modal-body">
           <Form onSubmit={onSubmit}>
@@ -131,9 +131,7 @@ const Navbar = () => {
             <Form.Group className="mb-3" controlId="formEmail">
               <Form.Label>Email</Form.Label>
               <Form.Control type="email" name="email" placeholder="Enter your email" required isInvalid={!!emailError} />
-              <Form.Control.Feedback type="invalid">
-                {emailError}
-              </Form.Control.Feedback>
+              <Form.Control.Feedback type="invalid">{emailError}</Form.Control.Feedback>
             </Form.Group>
             <Form.Group className="mb-3" controlId="formContact">
               <Form.Label>Contact</Form.Label>
@@ -152,9 +150,7 @@ const Navbar = () => {
               <Form.Control as="textarea" name="message" rows={3} placeholder="You may add additional notes or requests" required />
             </Form.Group>
             <Modal.Footer>
-              <Button variant="secondary" onClick={handleClose}>
-                Close
-              </Button>
+              <Button variant="secondary" onClick={handleClose}>Close</Button>
               <Button type="submit" variant="primary" disabled={loading}>
                 {loading ? 'Submitting...' : 'Submit'}
               </Button>
@@ -162,6 +158,7 @@ const Navbar = () => {
           </Form>
         </Modal.Body>
       </Modal>
+      
       <ToastContainer />
     </header>
   );
