@@ -12,6 +12,7 @@ import Contact from './pages/Contact';
 import Faq from './pages/Faq';
 import Appointment from './pages/Appointment';
 import Department from './pages/Department';
+import Admin from './Admin.jsx';
 import PageNotFound from './common/PageNotFound.jsx';
 // import './App.css';
 import './assets/css/bootstrap.min.css';
@@ -34,6 +35,7 @@ const App = () => {
     <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
       <Navbar />
         <Routes>
+          <Route path='admin' element={<Admin />} />
           <Route path='/' element={<Home />} /> {/*for default page*/}
           <Route path='/Home' element={<Home />} />
           <Route path='/pages/Department' element={<Department />} /> {/*element content is the import file*/}
