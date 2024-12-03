@@ -271,6 +271,7 @@
 .services-container {
   padding: 0 20px;
   background-color: #f9f9f9;
+  padding-top: 20px;
 }
 
 .services-row {
@@ -341,14 +342,11 @@ body {
 
 /* FAQ Header */
 .faq-header {
-  background: #fff;
   color: #333;
-  padding: 20px;
-  border-bottom: 2px solid #eee;
 }
 
 .faq-header h1 {
-  font-size: 20px; /* Reduced size from 24px to 20px */
+  font-size: 33px; /* Reduced size from 24px to 20px */
   font-weight: 600;
   margin-bottom: 10px; /* Optional: Add spacing below the title */
 }
@@ -425,7 +423,6 @@ ul li {
 .faqPage {
   background-color: #f9f9f9;
   min-height: 100vh;
-  padding-top: 20px;
 }
 
 /* FAQ Start Section */

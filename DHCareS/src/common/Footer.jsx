@@ -44,24 +44,20 @@ const Footer = () => {
               <div className="col-xl-2 offset-xl-1 col-md-6 col-lg-3">
                 <div className="footer_widget">
                   <h3 className="footer_title">Services</h3>
+                  <div className='row'>
                   <ul>
-                    <li><NavLink to='/'>Elderly Care</NavLink></li>
-                    <li><NavLink to='/'>Pathology</NavLink></li>
-                    <li><NavLink to='/'>Medicine</NavLink></li>
-                    <li><NavLink to='/'>Dental</NavLink></li>
+                    <div className='col'>
+                      <li><NavLink to='/'>Adult Care</NavLink></li>
+                      <li><NavLink to='/'>Adult/Child Care</NavLink></li>
+                      <li><NavLink to='/'>Child Care</NavLink></li>
+                    </div>
+                    <div className='col'>
+                    <li><NavLink to='/'>Old Age Care</NavLink></li>
+                    <li><NavLink to='/'>Orthopaedic Surgery</NavLink></li>
+                    <li><NavLink to='/'>ENT-Head and Neck Surgery</NavLink></li>
+                  </div>
                   </ul>
-                </div>
-              </div>
-
-              <div className="col-xl-2 col-md-6 col-lg-2">
-                <div className="footer_widget">
-                  <h3 className="footer_title">Useful Links</h3>
-                  <ul>
-                    <li><NavLink to='/pages/About'>About</NavLink></li>
-                    <li><NavLink to="/pages/HealthAwareness" activeclassname="active">HealthAwareness</NavLink></li>
-                    <li><NavLink to='/pages/Faq'>Faq</NavLink></li>
-                    <li><NavLink to='/' onClick={handleShow}>Appointment</NavLink></li>
-                  </ul>
+                  </div>
                 </div>
               </div>
 

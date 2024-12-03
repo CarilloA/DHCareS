@@ -61,7 +61,7 @@ const HealthAwareness = () => {
   };
 
   return (
-    <div style={{ padding: '20px', fontFamily: 'Arial, sans-serif' }}>
+    <div style={{ padding: '20px', fontFamily: 'Arial, sans-serif', backgroundColor: '#f9f9f9' }}>
       <h1 style={{ textAlign: 'center', color: '#003300' }}>Health Awareness</h1>
       <h5 style={{ textAlign: 'center', color: '#003300' }}>Click the image to download it.</h5>
 

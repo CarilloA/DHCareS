@@ -97,8 +97,8 @@ const EmergencyContact = () => {
   };
 
   return (
-    <div className="contact-form-container" style={{ background: '#f9f9f9', padding: '40px 20px' }}>
-      <h3 style={{ textAlign: 'center', color: '#003300', marginBottom: '30px' }}>Contact Us</h3>
+    <div className="contact-form-container" style={{ background: '#f9f9f9', padding: '40px 20px', borderRadius: '10px' }}>
+      <h3 style={{ textAlign: 'center', color: '#003300', marginBottom: '30px', fontSize: '30px', fontWeight: 'bold'}}>Contact Us</h3>
       <Form onSubmit={onSubmit} style={{ maxWidth: '600px', margin: '0 auto', background: '#fff', padding: '30px', borderRadius: '10px', boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)' }}>
         <div className='row'>
           <div className='col'>
