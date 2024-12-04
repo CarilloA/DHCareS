@@ -4,6 +4,7 @@ import Navbar from './common/Navbar.jsx';  // Corrected import path
 import Footer from './common/Footer';
 import Home from './Home';
 import Services from './pages/Services';
+import ServiceDetails from './pages/ServiceDetails';
 import HealthAwareness from './pages/HealthAwareness';
 import Map from './pages/Map';
 import About from './pages/About';
@@ -40,6 +41,7 @@ const App = () => {
           <Route path='/Home' element={<Home />} />
           <Route path='/pages/Department' element={<Department />} /> {/*element content is the import file*/}
           <Route path='/pages/Services' element={<Services />} />
+          <Route path="/pages/ServiceDetails/:serviceName" element={<ServiceDetails />} />
           <Route path='/pages/HealthAwareness' element={<HealthAwareness />} />
           <Route path='/pages/Faq' element={<Faq />} />
           <Route path='/pages/Events' element={<Events />} />

@@ -272,6 +272,7 @@
   padding: 0 20px;
   background-color: #f9f9f9;
   padding-top: 20px;
+  min-height: 70vh;
 }
 
 .services-row {
@@ -320,6 +321,101 @@
 .learn-more-link:hover {
   text-decoration: underline;
 }
+
+
+
+/* Service Details CSS */
+.service-details-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 70vh;
+  /* padding: 10px; */
+  background: linear-gradient(145deg, #f5f7fa, #dcdde1); /* Soft gradient background */
+}
+
+/* Styling for the service card */
+.service-card {
+  background-color: #fff;
+  padding: 6em;
+  border-radius: 12px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 700px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Service Name */
+.service-name {
+  font-size: 2.5rem;
+  color: #333;
+  font-weight: 600;
+  margin-bottom: 12px;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+/* Service Category */
+.service-category {
+  font-size: 1.3rem;
+  color: #555;
+  font-weight: 500;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+/* Service Description */
+.service-description {
+  font-size: 1.1rem;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Service Details List */
+.service-details-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+}
+
+/* Service Detail */
+.service-detail {
+  font-size: 1.1rem;
+  color: #444;
+  margin-bottom: 12px;
+  padding-left: 20px;
+  position: relative;
+}
+
+.service-detail::before {
+  content: '•';
+  color: #4caf50; /* Green bullet points */
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+/* 'Not Found' Error Message */
+.not-found {
+  text-align: center;
+  font-size: 1.8rem;
+  color: #f44336; /* Red color for errors */
+  font-weight: 700;
+  margin-top: 100px;
+}
+
+
+
+
+
 
 
 /* Faq CSS */

@@ -1,13 +1,19 @@
 import React, { useState } from 'react';
 import { format, eachDayOfInterval, startOfMonth, endOfMonth } from 'date-fns';
-import { Link } from 'react-router-dom'; // Assuming you're using React Router for navigation
+import { BrowserRouter as Router, Routes, Route, useNavigate, useLocation, } from 'react-router-dom';
 import { Modal, Button, Form } from 'react-bootstrap';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const Services = () => {
-  // For category filter
-  const [selectedCategory, setSelectedCategory] = useState('All');
+
+  const navigate = useNavigate(); // Initialize navigate hook
+
+  const { search } = useLocation();
+  const params = new URLSearchParams(search);
+  const selectedCategoryFromParams = params.get('category') || 'All';  // Default to 'All' if no category is passed
+
+  const [selectedCategory, setSelectedCategory] = useState(selectedCategoryFromParams);
 
   const [selectedService, setSelectedService] = useState(null);
   const [selectedDate, setSelectedDate] = useState('');
@@ -20,6 +26,11 @@ const Services = () => {
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
+  const handleModalClick = (service) => {
+    setSelectedService(service);
+    handleShow(); // Show the modal when a service is clicked
+  };
 
   const validateEmail = (email) => {
     const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -78,15 +89,13 @@ const Services = () => {
     {
       id: 1,
       name: 'Adult Care',
-      learnMoreLink: '/', 
       services: [
-        'Arthritis', 'Cardiology', 'Infectious Disease', 'INternal Medecine', 'Nephrology & Kidney Transplant', 'Optimal Weight Management', 'Pulmonology', 'Reproductive Immunology', 'Rheumatology', 
+        'Arthritis', 'Cardiology', 'Infectious Disease', 'Internal Medecine', 'Nephrology & Kidney Transplant', 'Optimal Weight Management', 'Pulmonology', 'Reproductive Immunology', 'Rheumatology', 
       ],
     },
     {
       id: 2,
       name: 'Adult/Child Care',
-      learnMoreLink: '/',
       services: [
         'Allergy/Immunology', 'Genetics', 'Medical Nutrition', 'Vaccination', 
       ],
@@ -94,7 +103,6 @@ const Services = () => {
     {
       id: 3,
       name: 'Child Care',
-      learnMoreLink: '/', 
       services: [
         'General Pedriatics',
       ],
@@ -102,7 +110,6 @@ const Services = () => {
     {
       id: 4,
       name: 'Old Age Care',
-      learnMoreLink: '/', 
       services: [
         'Geriatic Medicine',
       ],
@@ -110,7 +117,6 @@ const Services = () => {
     {
       id: 5,
       name: 'Orthopaedic Surgery',
-      learnMoreLink: '/', 
       services: [
         'General Orthopaedics', 'Hands and Reconstructive Microsurgery', 'Methods of llizarov & Limb Deformity Correction', 'Hip, Knee, & Ankle Reconstruction', 'Foot & Ankle Surgery', 
       ],
@@ -118,7 +124,6 @@ const Services = () => {
     {
       id: 6,
       name: "Women's Health",
-      learnMoreLink: '/', 
       services: [
         'OB-GYN', 'Pediatric & Adolescent Gynecology', 
       ],
@@ -126,7 +131,6 @@ const Services = () => {
     {
       id: 7,
       name: 'ENT-Head and Neck Surgery',
-      learnMoreLink: '/', 
       services: [
         'Sleep Medicine', 'Facial Plastic & Aesthetics', 'Cleft Surgery & Ear Reconstruction', 
       ],
@@ -172,9 +176,9 @@ const Services = () => {
     ? servicesData
     : servicesData.filter((category) => category.name === selectedCategory);
 
-  const handleServiceClick = (id) => {
-    setSelectedService(id);
-    handleShow(); // Open the modal
+  const handleServiceClick = (service) => {
+    // Navigate to the ServiceDetails page with the service name as a URL parameter
+    navigate(`/pages/ServiceDetails/${service}`);
   };
 
   const onDateChange = (event) => {
@@ -198,62 +202,65 @@ const Services = () => {
         <div className="services-container">
           <h1 className="text-center">Services Offered</h1>
 
-           {/* Service Category Filter */}
-          <div style={{ margin: '20px 0', textAlign: 'center' }}>
-            <select
-              value={selectedCategory}
-              onChange={(e) => setSelectedCategory(e.target.value)}
-              style={{
-                padding: '10px',
-                borderRadius: '5px',
-                border: '1px solid #003300',
-                fontSize: '16px',
-              }}
-            >
-              <option value="All">All Categories</option>
-              {servicesData.map((category) => (
-                <option key={category.id} value={category.name}>
-                  {category.name}
-                </option>
-              ))}
-            </select>
-          </div>
+           {/* Category Filter */}
+      <div style={{ margin: '20px 0', textAlign: 'center' }}>
+        <select
+          value={selectedCategory}
+          onChange={(e) => setSelectedCategory(e.target.value)}
+          style={{
+            padding: '10px',
+            borderRadius: '5px',
+            border: '1px solid #003300',
+            fontSize: '16px',
+          }}
+        >
+          <option value="All">All Categories</option>
+          {servicesData.map((category) => (
+            <option key={category.id} value={category.name}>
+              {category.name}
+            </option>
+          ))}
+        </select>
+      </div>
     
-          {/* Services List */}
-    <div className="services-row">
-      {filteredCategory.map((category) => (
-        <div key={category.id} className="category-container">
-          <div className="d-flex align-items-center">
-            <h2 className="mr-3">{category.name}</h2>
-            <button className="btn1" onClick={() => handleServiceClick(category.id)}>
-              Make an Appointment
-            </button>
-          </div>
-          <table className="services-table">
-            <thead>
-              <tr>
-                <th>Service Name</th>
-                <th>Category</th>
-                <th>Actions</th>
-              </tr>
-            </thead>
-            <tbody>
-              {category.services.map((service, index) => (
-                <tr key={`${category.id}-${index}`}>
-                  <td>{service}</td>
-                  <td>{category.name}</td>
-                  <td>
-                    <Link to={category.learnMoreLink} className="learn-more-link">
-                      Learn More
-                    </Link>
-                  </td>
+          {/* Display filtered services */}
+      <div className="services-row">
+        {filteredCategory.map((category) => (
+          <div key={category.id} className="category-container">
+            <div className="d-flex align-items-center">
+              <h2 className="mr-3">{category.name}</h2>
+              <button className="btn1" onClick={() => handleModalClick(category.id)}>
+                Make an Appointment
+              </button>
+            </div>
+            <table className="services-table">
+              <thead>
+                <tr>
+                  <th>Service Name</th>
+                  <th>Category</th>
+                  <th>Actions</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      ))}
-    </div>
+              </thead>
+              <tbody>
+                {category.services.map((service, index) => (
+                  <tr key={`${category.id}-${index}`}>
+                    <td>{service}</td>
+                    <td>{category.name}</td>
+                    <td>
+                      <button
+                        className="learn-more-button"
+                        onClick={() => handleServiceClick(service)}
+                      >
+                        Learn More
+                      </button>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        ))}
+      </div>
     
           {/* Appointment Modal */}
           <Modal show={show} onHide={handleClose} centered>
