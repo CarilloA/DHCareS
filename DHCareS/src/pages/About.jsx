@@ -23,23 +23,23 @@ const About = () => {
         <p className="section-content">
           Konsulta Specialista Clinic has been at the forefront of
           providing comprehensive medical services in the community. Our team of
-          experienced doctors and medical professionals work tirelessly to provide
+          experienced doctors and medical professionals worked to provide
           personalized care to each patient. We specialize in consultations, check-ups,
-          and treatment for various health conditions.
+          and treatment for health conditions.
         </p>
       </div>
 
-      {/* Achievements Section */}
+     {/* Achievements Section */}
       <div className="about-section">
         <h2 className="section-title">Achievements</h2>
-        <ul className="achievements-list">
-          <li>Over years of experience in the healthcare industry</li>
-          <li>Successfully treated number of patients</li>
-          <li>Partnered with leading healthcare providers</li>
-          <li>Consistently ranked among the top healthcare facilities in the region</li>
-          <li>Offer a wide range of medical services to cater to diverse patient needs</li>
-        </ul>
+        <div className="achievements-list">
+          <div className="achievement-item"><p> Years of experience in the healthcare industry</p></div>
+          <div className="achievement-item"><p> Partnered with leading healthcare providers</p></div>
+          <div className="achievement-item"><p> Offer a wide range of medical services to cater to diverse patient needs</p></div>
+        </div>
       </div>
+
+
     </div>
   );
 };

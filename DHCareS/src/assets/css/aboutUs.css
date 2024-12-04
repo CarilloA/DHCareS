@@ -66,24 +66,36 @@
   .achievements-list {
     padding-left: 20px;
     margin-top: 20px;
+    list-style-type: none; /* Hide default list markers */
   }
-  
-  .achievements-list li {
-    font-size: 1.2rem;
-    margin-bottom: 15px;
-    color: #333;
-    position: relative;
-    padding-left: 25px;
+  .p{
+    font: 'poppins', 'sans serif';
+    font-size: 1.2rem; /* Match font size */
+
   }
-  
-  .achievements-list li:before {
-    content: '✔';
-    color: #b99c78; /* Light brown checkmark */
+    /* Achievements Item Styling */
+  .achievement-item {
+    font-size: 1.2rem; /* Match font size */
+    margin-bottom: 15px; /* Similar spacing to list items */
+    color: #333; /* Consistent text color */
+    position: relative; /* Allows pseudo-element positioning */
+    padding-left: 30px; /* Space for the checkmark */
+    line-height: 1.8; /* Consistent line spacing */
+    font-family: 'Arial', sans-serif; /* Match font style */
+    text-align: justify; /* Match content text alignment */
+  }
+
+  .achievement-item:before {
+    content: '✔'; /* Checkmark symbol */
+    color: #b99c78; /* Light brown checkmark color */
     font-weight: bold;
-    position: absolute;
-    left: 0;
-    top: 0;
+    position: absolute; /* Place checkmark relative to item */
+    left: 0; /* Align checkmark at the start */
+    top: 0; /* Vertically align checkmark */
+    line-height: 1.8; /* Align with text */
   }
+
+
   
   /* Responsive Design */
   @media (max-width: 1200px) {
