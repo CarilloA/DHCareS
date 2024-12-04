@@ -4,9 +4,15 @@ import { Modal, Button, Form } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Footer = () => {
-  const [show, setShow] = useState(false);
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  // const [show, setShow] = useState(false);
+  // const handleClose = () => setShow(false);
+  // const handleShow = () => setShow(true);
+
+  const handleLinkClick = (e) => {
+    e.preventDefault(); // Prevent default behavior of NavLink
+    const href = e.target.getAttribute('href'); // Get the link's href
+    window.location.href = href; // Force the page to reload
+  };
 
   return (
     <div>
@@ -41,77 +47,28 @@ const Footer = () => {
                 </div>
               </div>
 
-              <div className="col-xl-2 offset-xl-1 col-md-6 col-lg-3">
+              <div className="col-md-4 mb-3 mr-5">
                 <div className="footer_widget">
-                  <h3 className="footer_title">Services</h3>
-                  <div className='row'>
-                  <ul>
-                    <div className='col'>
-                      <li><NavLink to='/'>Adult Care</NavLink></li>
-                      <li><NavLink to='/'>Adult/Child Care</NavLink></li>
-                      <li><NavLink to='/'>Child Care</NavLink></li>
+                  <h3 className="footer_title text-center">Services</h3>
+                  <div className="row">
+                    <div className="col-6">
+                      <ul className="list-unstyled">
+                        <li><NavLink to={`/pages/Services?category=Adult Care`} onClick={handleLinkClick}>Adult Care</NavLink></li>
+                        <li><NavLink to={`/pages/Services?category=Adult/Child Care`} onClick={handleLinkClick}>Adult/Child Care</NavLink></li>
+                        <li><NavLink to={`/pages/Services?category=Child Care`} onClick={handleLinkClick}>Child Care</NavLink></li>
+                        <li><NavLink to={`/pages/Services?category=Old Age Care`} onClick={handleLinkClick}>Old Age Care</NavLink></li>
+                      </ul>
                     </div>
-                    <div className='col'>
-                    <li><NavLink to='/'>Old Age Care</NavLink></li>
-                    <li><NavLink to='/'>Orthopaedic Surgery</NavLink></li>
-                    <li><NavLink to='/'>ENT-Head and Neck Surgery</NavLink></li>
-                  </div>
-                  </ul>
+                    <div className="col-6">
+                      <ul className="list-unstyled">
+                        <li><NavLink to={`/pages/Services?category=Orthopaedic Surgery`} onClick={handleLinkClick}>Orthopaedic Surgery</NavLink></li>
+                        <li><NavLink to={`/pages/Services?category=Women\'s Health`} onClick={handleLinkClick}>Women's Health</NavLink></li>
+                        <li><NavLink to={`/pages/Services?category=ENT-Head and Neck Surgery`} onClick={handleLinkClick}>ENT-Head and Neck Surgery</NavLink></li>
+                      </ul>
+                    </div>
                   </div>
                 </div>
               </div>
-
-              {/* Modal for "Make an Appointment" */}
-              <Modal show={show} onHide={handleClose} centered dialogClassName="custom-modal">
-                  <Modal.Header closeButton>
-                    <Modal.Title className="custom-modal-title">
-                      Make an Appointment
-                    </Modal.Title>
-                  </Modal.Header>
-                  <Modal.Body className="custom-modal-body">
-                    <Form>
-                      <Form.Group className="mb-3" controlId="formName">
-                        <Form.Label>Name</Form.Label>
-                        <Form.Control type="text" placeholder="Enter your name" />
-                      </Form.Group>
-                      <Form.Group className="mb-3" controlId="formEmail">
-                        <Form.Label>Email</Form.Label>
-                        <Form.Control type="email" placeholder="Enter your email" />
-                      </Form.Group>
-                      <Form.Group className="mb-3" controlId="formEmail">
-                        <Form.Label>Contact</Form.Label>
-                        <Form.Control type="tel" placeholder="Enter your contact number" />
-                      </Form.Group>
-                      <Form.Group className="mb-3" controlId="formDate">
-                        <Form.Label>Preferred Date</Form.Label>
-                        <Form.Control type="date" />
-                      </Form.Group>
-                      <Form.Group className="mb-3" controlId="formTime">
-                        <Form.Label>Preferred Time</Form.Label>
-                        <Form.Control type="time" />
-                      </Form.Group>
-                      <Form.Group controlId="formMessage">
-                        <Form.Label>Reason</Form.Label>
-                        <Form.Control
-                          as="textarea"
-                          rows={3}
-                          placeholder="You may add additional notes or requests"
-                        />
-                      </Form.Group>
-                    </Form>
-                  </Modal.Body>
-                  <Modal.Footer>
-                    <Button variant="secondary" onClick={handleClose}>
-                      Close
-                    </Button>
-                    <Button
-                      variant="primary"
-                      onClick={() => alert('Custom Appointment Submitted!')}
-                    >
-                      Submit
-                    </Button>
-                  </Modal.Footer>
-                </Modal>
 
               <div className="col-xl-3 col-md-6 col-lg-3">
                 <div className="footer_widget">
@@ -126,6 +83,11 @@ const Footer = () => {
               </div>
             </div>
           </div>
+
+          <div className="text-center text-light">
+            <small>&copy; {new Date().getFullYear()} Konsulta Specialista Clinic. All Rights Reserved.</small>
+          </div>
+
         </div>
       </footer>
     </div>
