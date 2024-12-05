@@ -115,7 +115,7 @@ const ServiceDetails = () => {
         },
         {
             id: 10,
-            name: 'Allergy/Immunology',
+            name: 'Allergy & Immunology',
             category: 'Adult/Child Care',
             description: 'Allergy and immunology deal with diagnosing and treating allergic diseases, immune system disorders, and conditions like asthma, eczema, and autoimmune diseases.',
             details: [

@@ -24,7 +24,7 @@ const Faq = () => {
   const faqData = [
     {
       question: "What are the clinic hours?",
-      answer: "The clinic is open from 8:0 AM to 7:00 PM, Monday to Friday.",
+      answer: "The clinic is open from 8:00 AM to 7:00 PM, Monday to Friday.",
     },
     {
       question: "Is walk-in consultation available?",
@@ -34,13 +34,13 @@ const Faq = () => {
     {
       question: "What are your telephone services?",
       answer:
-        "Contact us at Phone No: +639452302676 or Landline:+63 (074) 4247086.",
+        "Contact us at Phone No: +639452302676 or Landline: +63 (074) 4247086.",
     },
     {
       question: "What are your social media handles?",
       answer: (
         <div>
-          <p>You can find us on:</p>
+          <div>You can find us on:</div> {/* This is fine as long as not inside <p> */}
           <ul style={{ listStyle: "none", padding: "0", margin: "0", paddingLeft: "20px" }}>
             <li style={{ marginBottom: "10px" }}>
               <a
@@ -81,8 +81,7 @@ const Faq = () => {
           </ul>
         </div>
       ),
-    }    
-    
+    },
   ];
 
   const [searchTerm, setSearchTerm] = useState("");
@@ -149,7 +148,6 @@ const Faq = () => {
         </div>
       </section>
 
-
       {/* Search Bar for FAQs */}
       <div className="faq-search-bar text-center my-4">
         <input
@@ -167,7 +165,8 @@ const Faq = () => {
           filteredFaqs.map((faq, index) => (
             <div className="faq-item mb-4" key={index}>
               <h4 className="faq-question fw-bold">{faq.question}</h4>
-              <p className="faq-answer text-muted">{faq.answer}</p>
+              {/* Answer should not be wrapped in a <p> tag */}
+              <div className="faq-answer text-muted">{faq.answer}</div>
             </div>
           ))
         ) : (

@@ -90,35 +90,35 @@ const Services = () => {
       id: 1,
       name: 'Adult Care',
       services: [
-        'Arthritis', 'Cardiology', 'Infectious Disease', 'Internal Medecine', 'Nephrology & Kidney Transplant', 'Optimal Weight Management', 'Pulmonology', 'Reproductive Immunology', 'Rheumatology', 
+        'Arthritis', 'Cardiology', 'Infectious Disease', 'Internal Medicine', 'Nephrology & Kidney Transplant', 'Optimal Weight Management', 'Pulmonology', 'Reproductive Immunology', 'Rheumatology', 
       ],
     },
     {
       id: 2,
       name: 'Adult/Child Care',
       services: [
-        'Allergy/Immunology', 'Genetics', 'Medical Nutrition', 'Vaccination', 
+        'Allergy & Immunology', 'Genetics', 'Medical Nutrition', 'Vaccination', 
       ],
     },
     {
       id: 3,
       name: 'Child Care',
       services: [
-        'General Pedriatics',
+        'General Pediatrics',
       ],
     },
     {
       id: 4,
       name: 'Old Age Care',
       services: [
-        'Geriatic Medicine',
+        'Geriatric Medicine',
       ],
     },
     {
       id: 5,
       name: 'Orthopaedic Surgery',
       services: [
-        'General Orthopaedics', 'Hands and Reconstructive Microsurgery', 'Methods of llizarov & Limb Deformity Correction', 'Hip, Knee, & Ankle Reconstruction', 'Foot & Ankle Surgery', 
+        'General Orthopaedics', 'Hands and Reconstructive Microsurgery', 'Methods of Ilizarov & Limb Deformity Correction', 'Hip, Knee, & Ankle Reconstruction', 'Foot & Ankle Surgery', 
       ],
     },
     {
