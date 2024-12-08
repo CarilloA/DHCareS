@@ -6,8 +6,8 @@ import 'react-toastify/dist/ReactToastify.css';
 const Map = () => {
   return (
     <div className="map-container" style={{ textAlign: 'center', margin: '20px' }}>
-      <h2 style={{ color: '#003300', fontWeight: 'bold', marginBottom: '20px' }}>
-        Konsulta Specialista Clinic Location
+      <h2 style={{ color: '#1f1f1f', fontWeight: 'bold', marginBottom: '20px' }}>
+        University of Baguio Clinic Location
       </h2>
       <div
         style={{
@@ -20,7 +20,7 @@ const Map = () => {
       >
         {/* Embed Google Maps with gestureHandling in the src URL */}
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3827.2519593877114!2d120.59602867514319!3d16.412025184318246!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3391a10008a3550f%3A0xa21178e9af841cd2!2sKonsulta%20Specialista%20Clinic!5e0!3m2!1sen!2sph!4v1732549775721!5m2!1sen!2sph&gestureHandling=cooperative"
+          src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d820.2089640031288!2d120.59745169492577!3d16.41516056815712!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x3391a15d8cb0dc9b%3A0xe282b2015f6debba!2sCH8W%2B3X5%20University%20of%20Baguio%2C%20Gen.%20Luna%20Rd%2C%20Baguio%2C%202600%20Benguet!3m2!1d16.415128!2d120.5974765!5e0!3m2!1sen!2sph!4v1733645826341!5m2!1sen!2sph"
           width="100%"
           height="450"
           style={{ border: '0' }}
@@ -31,7 +31,7 @@ const Map = () => {
         />
       </div>
       <p style={{ fontSize: '16px', color: '#555', marginTop: '20px' }}>
-        Find us at <strong>4M-10 4th floor, Porta Vaga Mall, Session Road, Baguio City, Philippines, 2600</strong> using the map above.
+        Find us at <strong>Gen. Luna, Baguio City, Philippines, 2600</strong> using the map above.
       </p>
     </div>
   );
@@ -197,9 +197,9 @@ const ContactUs = () => {
   return (
     <Container fluid>
       <Row className="justify-content-center">
-        <Col xl={6} lg={8} md={10} sm={12} className="mb-4">
+        {/* <Col xl={6} lg={8} md={10} sm={12} className="mb-4">
           <EmergencyContact />
-        </Col>
+        </Col> */}
         <Col xl={6} lg={8} md={10} sm={12} className="mb-4">
           <Map />
         </Col>

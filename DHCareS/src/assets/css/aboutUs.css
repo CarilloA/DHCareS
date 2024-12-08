@@ -1,190 +1,189 @@
 /* General Page Styling */
 .about-page {
-    padding: 40px 20px;
-    background: linear-gradient(135deg, #e6f7f5, #ffffff);
-    color: #333;
-    font-family: 'Arial', sans-serif;
-    line-height: 1.8;
-    max-width: 1200px;
-    margin: 0 auto;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-    border-radius: 15px;
-    border: 2px solid #b99c78; /* Light brown border */
-    box-sizing: border-box;
-  }
-  
-  /* Title Styling */
-  .about-title {
-    text-align: center;
-    font-size: 3rem;
-    color: #003300;
-    margin-bottom: 50px;
-    font-weight: bold;
-    text-shadow: 1px 1px 2px #aaa;
-    color: #003300; /* Light brown for title */
-  }
-  
-  /* Section Styling */
-  .about-section {
-    margin-bottom: 40px;
-    padding: 30px;
-    background: #ffffff;
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border-left: 5px solid #b99c78; /* Light brown border on the left */
-    border-right: 5px solid #b99c78;
-  }
-  
-  .about-section:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  }
-  
-  /* Section Title Styling */
-  .section-title {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    color: #006400;
-    font-weight: bold;
-    text-transform: uppercase;
-    text-align: center;
-    letter-spacing: 1.5px;
-    color: #003300; /* Light brown for section titles */
-  }
-  
-  /* Content Text Styling */
-  .section-content {
-    font-size: 1.2rem;
-    color: #555;
-    text-align: justify;
-    padding: 0 10px;
-    line-height: 1.8;
-  }
-  
-  /* Achievements List */
-  .achievements-list {
-    padding-left: 20px;
-    margin-top: 20px;
-    list-style-type: none; /* Hide default list markers */
-  }
-  .p{
-    font: 'poppins', 'sans serif';
-    font-size: 1.2rem; /* Match font size */
+  padding: 40px 20px;
+  background: linear-gradient(135deg, #ffffff, #ffffff);
+  color: #333;
+  font-family: 'Arial', sans-serif;
+  line-height: 1.8;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  border: 2px solid #C3151C; /* red border */
+  box-sizing: border-box;
+  margin-bottom: 50px; /* Add margin at the bottom */
+}
 
-  }
-    /* Achievements Item Styling */
-  .achievement-item {
-    font-size: 1.2rem; /* Match font size */
-    margin-bottom: 15px; /* Similar spacing to list items */
-    color: #333; /* Consistent text color */
-    position: relative; /* Allows pseudo-element positioning */
-    padding-left: 30px; /* Space for the checkmark */
-    line-height: 1.8; /* Consistent line spacing */
-    font-family: 'Arial', sans-serif; /* Match font style */
-    text-align: justify; /* Match content text alignment */
-  }
+/* Title Styling */
+.about-title {
+  text-align: center;
+  font-size: 3rem;
+  color: #1f1f1f;
+  margin-bottom: 50px;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px #aaa;
+  color: #1f1f11; /* black for title */
+}
 
-  .achievement-item:before {
-    content: '✔'; /* Checkmark symbol */
-    color: #b99c78; /* Light brown checkmark color */
-    font-weight: bold;
-    position: absolute; /* Place checkmark relative to item */
-    left: 0; /* Align checkmark at the start */
-    top: 0; /* Vertically align checkmark */
-    line-height: 1.8; /* Align with text */
-  }
+/* Section Styling */
+.about-section {
+  margin-bottom: 40px;
+  padding: 30px;
+  background: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-left: 5px solid #1f1f1f; /* red border on the left */
+  border-right: 5px solid #1f1f11;
+}
 
+.about-section:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
 
-  
-  /* Responsive Design */
-  @media (max-width: 1200px) {
-    .about-page {
+/* Section Title Styling */
+.section-title {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #1f1f1f;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 1.5px;
+  color: #1f1f11; /* Light brown for section titles */
+}
+
+/* Content Text Styling */
+.section-content {
+  font-size: 1.2rem;
+  color: #555;
+  text-align: justify;
+  padding: 0 10px;
+  line-height: 1.8;
+}
+
+/* Achievements List */
+.achievements-list {
+  padding-left: 20px;
+  margin-top: 20px;
+  list-style-type: none; /* Hide default list markers */
+}
+
+.p{
+  font: 'poppins', 'sans serif';
+  font-size: 1.2rem; /* Match font size */
+}
+
+/* Achievements Item Styling */
+.achievement-item {
+  font-size: 1.2rem; /* Match font size */
+  margin-bottom: 15px; /* Similar spacing to list items */
+  color: #1f1f1f; /* Consistent text color */
+  position: relative; /* Allows pseudo-element positioning */
+  padding-left: 30px; /* Space for the checkmark */
+  line-height: 1.8; /* Consistent line spacing */
+  font-family: 'Arial', sans-serif; /* Match font style */
+  text-align: justify; /* Match content text alignment */
+}
+
+.achievement-item:before {
+  content: '✔'; /* Checkmark symbol */
+  color: #C3151C; /* red checkmark color */
+  font-weight: bold;
+  position: absolute; /* Place checkmark relative to item */
+  left: 0; /* Align checkmark at the start */
+  top: 0; /* Vertically align checkmark */
+  line-height: 1.8; /* Align with text */
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .about-page {
       padding: 40px 15px;
-    }
-  
-    .about-title {
+  }
+
+  .about-title {
       font-size: 2.5rem;
-    }
-  
-    .section-title {
+  }
+
+  .section-title {
       font-size: 1.8rem;
-    }
-  
-    .section-content {
-      font-size: 1.1rem;
-    }
-  
-    .achievements-list li {
-      font-size: 1.1rem;
-    }
   }
-  
-  @media (max-width: 992px) {
-    .about-title {
+
+  .section-content {
+      font-size: 1.1rem;
+  }
+
+  .achievements-list li {
+      font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .about-title {
       font-size: 2.2rem;
-    }
-  
-    .about-section {
-      padding: 20px;
-    }
-  
-    .section-title {
-      font-size: 1.6rem;
-    }
-  
-    .section-content {
-      font-size: 1.1rem;
-    }
-  
-    .achievements-list li {
-      font-size: 1rem;
-    }
   }
-  
-  @media (max-width: 768px) {
-    .about-page {
-      padding: 30px 10px;
-    }
-  
-    .about-title {
-      font-size: 2rem;
-    }
-  
-    .section-title {
-      font-size: 1.5rem;
-    }
-  
-    .section-content {
+
+  .about-section {
+      padding: 20px;
+  }
+
+  .section-title {
+      font-size: 1.6rem;
+  }
+
+  .section-content {
+      font-size: 1.1rem;
+  }
+
+  .achievements-list li {
       font-size: 1rem;
-    }
-  
-    .achievements-list li {
+  }
+}
+
+@media (max-width: 768px) {
+  .about-page {
+      padding: 30px 10px;
+  }
+
+  .about-title {
+      font-size: 2rem;
+  }
+
+  .section-title {
+      font-size: 1.5rem;
+  }
+
+  .section-content {
+      font-size: 1rem;
+  }
+
+  .achievements-list li {
       font-size: 1rem;
       margin-bottom: 10px;
-    }
   }
-  
-  @media (max-width: 576px) {
-    .about-page {
+}
+
+@media (max-width: 576px) {
+  .about-page {
       padding: 20px;
-    }
-  
-    .about-title {
+  }
+
+  .about-title {
       font-size: 1.8rem;
-    }
-  
-    .section-title {
+  }
+
+  .section-title {
       font-size: 1.4rem;
-    }
-  
-    .section-content {
+  }
+
+  .section-content {
       font-size: 0.95rem;
-    }
-  
-    .achievements-list li {
+  }
+
+  .achievements-list li {
       font-size: 0.9rem;
       margin-bottom: 8px;
-    }
   }
-  
+}

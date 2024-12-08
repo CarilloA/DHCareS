@@ -62,8 +62,8 @@ const HealthAwareness = () => {
 
   return (
     <div style={{ padding: '20px', fontFamily: 'Arial, sans-serif', backgroundColor: '#f9f9f9' }}>
-      <h1 style={{ textAlign: 'center', color: '#003300' }}>Health Awareness</h1>
-      <h5 style={{ textAlign: 'center', color: '#003300' }}>Click the image to download it.</h5>
+      <h1 style={{ textAlign: 'center', color: '#1f1f1f' }}>Health Awareness</h1>
+      <h5 style={{ textAlign: 'center', color: '#1f1f1f' }}>Click the image to download it.</h5>
 
       {/* Category Filter */}
       <div style={{ margin: '20px 0', textAlign: 'center' }}>

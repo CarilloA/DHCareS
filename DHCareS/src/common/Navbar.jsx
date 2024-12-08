@@ -6,6 +6,8 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 import logo from '../assets/img/about/logo.png';
+import ublogo1 from'../assets/img/ubclinic/ublogo1.png';
+import ubseal4 from'../assets/img/ubclinic/ubseal4.png';
 
 const Navbar = () => {
   const [show, setShow] = useState(false);
@@ -76,8 +78,9 @@ const Navbar = () => {
               <div className="col">
                 <div className="navbar-brand">
                   <NavLink to="/">
-                    <img src={logo} alt="Konsulta Specialista Clinic's logo" width="100vw" height="100vh" />
-                    Konsulta Specialista Clinic
+                    <img src={ublogo1} alt="University of Baguio Medical Clinic's logo" width="90vw" height="30vh" />
+                    
+                     Medical Clinic
                   </NavLink>
                 </div>
               </div>
@@ -104,7 +107,7 @@ const Navbar = () => {
                       <li className="nav-item"><NavLink to="/pages/Services" className="nav-link" style={({ isActive }) => ({ textDecoration: isActive ? 'underline' : 'none', fontWeight: isActive ? 'bolder': 'normal',})}>Services</NavLink></li>
                       <li className="nav-item"><NavLink to="/pages/HealthAwareness" className="nav-link" style={({ isActive }) => ({ textDecoration: isActive ? 'underline' : 'none', fontWeight: isActive ? 'bolder': 'normal',})}>Health Awareness</NavLink></li>
                       <li className="nav-item"><NavLink to="/pages/Faq" className="nav-link" style={({ isActive }) => ({ textDecoration: isActive ? 'underline' : 'none', fontWeight: isActive ? 'bolder': 'normal',})}>FAQ</NavLink></li>
-                      <li className="nav-item"><NavLink to="/pages/Map" className="nav-link" style={({ isActive }) => ({ textDecoration: isActive ? 'underline' : 'none', fontWeight: isActive ? 'bolder': 'normal',})}>Contact Us</NavLink></li>
+                      <li className="nav-item"><NavLink to="/pages/Map" className="nav-link" style={({ isActive }) => ({ textDecoration: isActive ? 'underline' : 'none', fontWeight: isActive ? 'bolder': 'normal',})}>Map</NavLink></li>
                       <li className="nav-item"><NavLink to="/pages/About" className="nav-link" style={({ isActive }) => ({ textDecoration: isActive ? 'underline' : 'none', fontWeight: isActive ? 'bolder': 'normal',})}>About Us</NavLink></li>
                       <li className="nav-item">
                       </li>

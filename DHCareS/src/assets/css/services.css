@@ -1,0 +1,70 @@
+/* General Styles */
+.services-container {
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 1200px;
+  }
+  
+  h1 {
+    font-size: 2rem;
+    color: #003300;
+    text-align: center;
+  }
+  
+  .category-dropdown {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #003300;
+    width: 200px;
+    display: block;
+    margin: 0 auto 20px;
+  }
+  
+  .services-list {
+    display: block;
+    margin-top: 20px;
+  }
+  
+  .service-item {
+    border: 1px solid #003300;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    padding: 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Makes the service item take up the full width */
+    margin-bottom: 20px; /* Space between items */
+    height: 250px; /* Maintains rectangular height */
+  }
+  
+  .service-item h2 {
+    font-size: 1.5rem;
+    color: #1f1f1f;
+  }
+  
+  .service-item ul {
+    list-style: none;
+    padding-left: 20px;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 1.8rem;
+    }
+  
+    .service-item {
+      height: 220px; /* Reduces height on smaller screens */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .service-item {
+      height: 200px; /* Further reduction for mobile */
+    }
+  
+    h1 {
+      font-size: 1.5rem;
+    }
+  }
+  
